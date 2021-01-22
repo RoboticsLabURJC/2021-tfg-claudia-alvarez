@@ -40,12 +40,5 @@ youTube_id: ID7qaEcIu4k
 
 Hello, everybody.
 
-You can write an introduction about the work you are going to do, links, something about yourself, etc.
+My name is Claudia and this will be my blog, where you can see the progress and improvements made each week.
 
-In the `README.md` file at the root of the project are the steps to replicate the Minimal mistakes template on your local machine. This way you don't need to upload it to GitHub to be represented until it's ready.
-
-Uploading content to GitHub automatically displays your documentation in the link with a structure of the type:
-
-```
-https://github_user_name.github.io/repository_name/
-```
