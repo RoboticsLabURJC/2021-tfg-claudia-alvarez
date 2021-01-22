@@ -41,4 +41,5 @@ youTube_id: ID7qaEcIu4k
 Hello, everybody.
 
 My name is Claudia and this will be my blog, where you can see the progress and improvements made each week.
+TFG Tutor: [Jose Maria Cañas](https://gsyc.urjc.es/jmplaza/)
 
