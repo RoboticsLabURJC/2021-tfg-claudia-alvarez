@@ -1,12 +1,10 @@
 ---
-permalink: /about/
+permalink: /references/
 title: "References used in this project"
 
 sidebar:
   nav: "docs"
 ---
-
-You can add here references to:
 
 ## TFGs
 
