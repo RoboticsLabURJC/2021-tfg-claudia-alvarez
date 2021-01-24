@@ -1,5 +1,5 @@
 ---
-permalink: /references/
+permalink: /about/
 title: "References used in this project"
 
 sidebar:
