@@ -1,5 +1,5 @@
 ---
-permalink: /about/
+permalink: /references/
 title: "References used in this project"
 
 sidebar:
@@ -8,13 +8,10 @@ sidebar:
 
 You can add here references to:
 
-- Articles
+- TFGs
+  -[Angel Perea's TFG](https://gsyc.urjc.es/jmplaza/students/tfg-kibotics-analytics-angel_perea-2020.pdf).
 - Programs
 - Examples
 - Web sites
-
-With the following sintax:
-
-```markdown
-[Text to display](link_to_the_website).
-```
+  -[Robotics Academy](https://jderobot.github.io/RoboticsAcademy/)
+  -[Unibotics](https://unibotics.org/)
