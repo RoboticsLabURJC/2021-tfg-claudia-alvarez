@@ -12,14 +12,14 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "sunrise"
+minimal_mistakes_skin    : "neon"
 
 # Site Settings
 #locale                   : "en-US"
 title                    : "TFG Blog"
 title_separator          : "-"
 subtitle                 : TFG title
-name                     : "JdeRobot"
+name                     : "Claudia Álvarez"
 description              : "Programming Robot Intelligence"
 url                      : http://jderobot.github.io
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -122,24 +122,24 @@ analytics:
 # PROFILE
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Claudia Álvarez Bravo"
   avatar           : "/assets/images/profile.jpg"
-  bio              : "Site for my documentation"
+  bio              : "Engineering student in audiovisual and multimedia systems"
   location         : "Location"
-  email            :
+  email            : c.alvarezb.2016@alumnos.urjc.es
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: yourmail@domain.com
-    - label: "About Me"
-      icon: "fas fa-fw fa-link"
-      url: "yoursite.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: c.alvarezb.2016@alumnos.urjc@alumnos.urjc.es
+   # - label: "About Me"
+   #   icon: "fas fa-fw fa-link"
+    #  url: "yoursite.com"
+   # - label: "Twitter"
+     # icon: "fab fa-fw fa-twitter-square"
+    #  url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/RoboticsLabURJC"
+      url: "https://github.com/claualbra"
     #- label: "Youtube"
     #  icon: "fab fa-fw fa-youtube"
     #  url: "https://www.youtube.com/channel/UCgmUgpircYAv_QhLQziHJOQ"
