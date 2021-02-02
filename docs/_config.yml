@@ -12,13 +12,13 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air"
+minimal_mistakes_skin    : "sunrise"
 
 # Site Settings
 #locale                   : "en-US"
-title                    : "Robotics Lab URJC"
+title                    : "TFG Blog"
 title_separator          : "-"
-subtitle                 : Programming Robot Intelligence
+subtitle                 : TFG title
 name                     : "JdeRobot"
 description              : "Programming Robot Intelligence"
 url                      : http://jderobot.github.io
