@@ -7,8 +7,8 @@ main:
   - title: Installation
     url: /install/
 
-  - title: About
-    url: /about/
+  - title: References
+    url: /references/
 
 # left side bar
 docs:
