@@ -126,7 +126,7 @@ author:
   avatar           : "/assets/images/profile.jpg"
   bio              : "Engineering student in audiovisual and multimedia systems"
   location         : "Brunete, Madrid"
-  email            : c.alvarezb.2016@alumnos.urjc.es
+ # email            : c.alvarezb.2016@alumnos.urjc.es
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
