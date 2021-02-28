@@ -1,0 +1,36 @@
+---
+title: "Week 3.  02/07/2020"
+excerpt: "Elasticserach in Django"
+
+sidebar:
+  nav: "docs"
+
+#toc: true
+#toc_label: "Elasticserach in Django"
+#toc_icon: "cog"
+classes: wide
+
+categories:
+- Previous work
+tags:
+- python
+- elasticsearch
+- Django
+- week 2
+
+author: Claudia Álvarez
+pinned: false
+
+gallery:
+  - url: /assets/images/elasticsearch_django.jpg
+    image_path: assets/images/elasticsearch_django.jpg
+    alt: "elasticserach con Django"
+---
+ Hello readers!
+ 
+ This week I have not been able to progress properly because I still do not have a computer to work properly so I have only done:
+ 
+- Use elasticsearch in Django, using django-elasticsearch-dsl and the admin to handle the data
+The result of using elasticsearch with django:
+
+  {% include gallery %}
