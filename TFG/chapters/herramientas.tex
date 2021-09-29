@@ -89,9 +89,24 @@ Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \te
 En este TFG se ha utilizado SQL para acceder a la base de datos de usuarios de Unibotics.
 
 \subsection{Django}
+Django es un \textit{framework} de desarrollo web de código abierto escrito en Python. Django es una herramienta completamente cargada, es decir, viene con extras para ayudar al desarrollo de una web, además es versátil, escalable, rápida y segura.Una de sus principales ventajas es que  levanta una página web de administración donde se pueden hacer acciones como retocar la base de datos. Django sigue el Modelo Vista Plantilla (MVT) como se muestra en la figura 2.6.\\
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, keepaspectratio]{img/django.png}
+    \caption{Estructura de Django}
+    \label{fig:django}
+\end{figure}
 
+Los modelos en Django son objetos en Python que son guardados en una base de datos. Los modelos son independientes al gestor de base de datos que se vaya a utilizar, se definen las estructuras de información de una manera genérica y además se puede añadir restricciones. Django puede traducir filtros de python en SQL gracias a su ORM, por lo tanto no es necesario saber lenguaje de datos. Los modelos estan formado por una lista de campos donde se define que tipo de datos es, si no hay ningún campo que tenga una clave primaria, Django generará una columna llamada id que se incrementará automáticamente. Los modelos se escriben en el fichero Models.py.\cite{model}\\
 
+Las vistas en Django esta formado por el fichero urls.py y views.py. En el fichero urls.py a partir de expresiones regulares se definen la urls que redirigen a funciones de views.py. La función views.py recibe un objeto HTTP Request y todos los parámetros de la URL capturados teniendo que devolver un objeto HTTP Response. Lo habitual en web dinámicas es hacer una consulta a la base de datos, generar un contexto que empotra en una plantilla y a través la cual se renderiza devolviendo un HTTP Response.\\
+
+Las plantillas son páginas dinámicas, es decir, son protopáginas la cuales solo se pueden renderizar juntando el contexto pasado por las vistas y gracias al lenguaje de plantillas dando como resultado normalmente un documento HTML. Esto es útil al programar ya que permite hacer páginas dinámicas en pocas líneas\\
+\newpage
+En resumen para formar un servidor en Django primero hay que diseñar el modelo de datos, luego se diseñan las urls que enrutaran a las vistas las cuales preparan un contexto que juntándolo con la plantilla se genera el HTTP Response.\\
+
+En este TFG se utiliza Django en la versión 2.2, el cual es el\textit{ framework} para construir la página web de Unibotics.
 
 
 
