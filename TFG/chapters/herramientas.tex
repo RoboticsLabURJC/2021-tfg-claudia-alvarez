@@ -15,7 +15,7 @@ La estructura de un documento HTML esta compuesto por la definición del tipo de
     \label{fig:html}
 \end{figure}
 
-Un elemento de HTML esta compuesto por etiquetas que son palabras que marcan el inicio y final de una sección. La etiqueta de apertura esta formada por una palabra o letra rodeada por '\textless' y '\textgreater' dando comienzo al elemento y normalmente con una etiqueta de cierre al igual que la de la apertura pero rodeada por '\textless/' y '\textgreater'. La etiqueta no distingue entre mayúsculas y minúsculas. Aunque haya una gran cantidad de etiquetas a veces se necesita información adicional para completar los elementos, esto se consigue gracias a los atributos. El atributo se encuentra dentro de la etiqueta de apertura con un espacio en blanco del nombre de la etiqueta o de otro atributo, el atributo esta compuesto por un nombre seguido del signo igual "=" y el valor del atributo entre comillas. Cada etiqueta tiene unos atributos asociados y estos a la vez unos valores predefinidos si se da un valor erróneo a un atributo al renderizar la página esta lo ignorará. Algunos atributos son obligatorios como en el caso de las imágenes, vídeos o enlaces como se muestra en la Figura 3.2, la etiqueta para los enlaces es \textit{a} y es obligatorio que le siga el atributo \textit{href}  para poder añadir la dirección a la que va a dirigir dicho enlace. Entre las etiquetas de apertura y cierre nos encontramos con el texto que será el contenido de la sección.\cite{etiqueta}
+Un elemento de HTML esta compuesto por etiquetas que son palabras que marcan el inicio y final de una sección. La etiqueta de apertura esta formada por una palabra o letra rodeada por '\textless' y '\textgreater' dando comienzo al elemento y normalmente con una etiqueta de cierre al igual que la de la apertura pero rodeada por '\textless/' y '\textgreater'. La etiqueta no distingue entre mayúsculas y minúsculas. Aunque haya una gran cantidad de etiquetas a veces se necesita información adicional para completar los elementos, esto se consigue gracias a los atributos. El atributo se encuentra dentro de la etiqueta de apertura con un espacio en blanco del nombre de la etiqueta o de otro atributo, el atributo esta compuesto por un nombre seguido del signo igual "=" y el valor del atributo entre comillas. Cada etiqueta tiene unos atributos asociados y estos a la vez unos valores predefinidos si se da un valor erróneo a un atributo al renderizar la página esta lo ignorará. Algunos atributos son obligatorios como en el caso de las imágenes, vídeos o enlaces como se muestra en la figura \ref{fig:elemento}, la etiqueta para los enlaces es \textit{a} y es obligatorio que le siga el atributo \textit{href}  para poder añadir la dirección a la que va a dirigir dicho enlace. Entre las etiquetas de apertura y cierre nos encontramos con el texto que será el contenido de la sección.\cite{etiqueta}
 
 
 \begin{figure}[H]
@@ -33,7 +33,7 @@ La última versión es la HTML5 la cual es utilizada en este proyecto, como mejo
 \subsection{CSS}
 CSS es el lenguaje de estilo encarga del diseño y presentación de los documentos HTML. Para llamar la atención de los usuarios en páginas web es importante añadir estilo a los documentos por eso se utiliza CSS, el cual puede definirse como un atributo de HTML llamado\textit{ style}, otra forma de meter estilo es utilizando la etiqueta {\textless style\textgreater} en la cabeza del documento HTML pero la mejor opción para añadir estilo es separándolo de la estructura, es decir, del documento HTML creando una hoja de estilo \textit{.css}  debido a que es más sencillo realizar cambios y se podrá diversificar el trabajo en estructura y estilo siendo más productivo. Para vincular la hoja de estilo con el HTML se utiliza la etiqueta \textit{\textless link\textgreater} en la cabecera.\\
 
-La estructura de una regla CSS se divide en selectores que contienen pares de propiedad-valor como se muestra en la figura 2.3. En los selectores se pone el nombre de las etiquetas las cuales quieres cambiar su estilo como puede ser la etiqueta \textit{body}, además estos selectores pueden ser el valor del atributo \textit{id} el cual es un identificador único para un elemento de HTML en este caso se pone el símbolo # antes del valor de su \textit{id}, a parte de identificar un elemento con un \textit{id} se puede utilizar el atributo \textit{class }que es un identificador para varios elementos, en este caso para añadirle estilo a los elementos pertenecientes a la misma clase al selector se le añade un punto delante.
+La estructura de una regla CSS se divide en selectores que contienen pares de propiedad-valor como se muestra en la figura \ref{fig:css}. En los selectores se pone el nombre de las etiquetas las cuales quieres cambiar su estilo como puede ser la etiqueta \textit{body}, además estos selectores pueden ser el valor del atributo \textit{id} el cual es un identificador único para un elemento de HTML en este caso se pone el símbolo # antes del valor de su \textit{id}, a parte de identificar un elemento con un \textit{id} se puede utilizar el atributo \textit{class }que es un identificador para varios elementos, en este caso para añadirle estilo a los elementos pertenecientes a la misma clase al selector se le añade un punto delante.
 
 \begin{figure}[H]
     \centering
@@ -78,7 +78,7 @@ Una instrucción SQL esta formada por comandos, cláusulas, operadores y funcion
 \newpage
 Las cláusulas son condiciones de modificación para poder definir los datos. Las cláusulas más importantes son \textit{FROM} para especificar la tabla, \textit{WHERE} para definir las condiciones de los registros que se desean, \textit{GROUP BY} para hacer agrupaciones específicas de registros, \textit{HAVING} para declarar la condición que debe cumplir cada grupo, \textit{ORDER BY} para que los registros sigan un orden especificado.\\
 
-Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \textit{NOT}) o de comparación que serían las operaciones del estilo mayor que, menor que o igual que. Las funciones se utilizan con el comando \textit{SELECT} para devolver un único valor de un grupo de registros como puede ser\textit{ AVG }que te devuelve la media o \textit{COUNT }para devolver el número de registros. En la figura 2.5 se muestra un ejemplo de una sentencia SQL con con todas sus partes.\cite{sql}\\
+Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \textit{NOT}) o de comparación que serían las operaciones del estilo mayor que, menor que o igual que. Las funciones se utilizan con el comando \textit{SELECT} para devolver un único valor de un grupo de registros como puede ser\textit{ AVG }que te devuelve la media o \textit{COUNT }para devolver el número de registros. En la figura \ref{fig:ejsql} se muestra un ejemplo de una sentencia SQL con con todas sus partes.\cite{sql}\\
 
 \begin{figure}[H]
     \centering
@@ -89,7 +89,7 @@ Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \te
 En este TFG se ha utilizado SQL para acceder a la base de datos de usuarios de Unibotics.
 
 \subsection{Django}
-Django es un \textit{framework} de desarrollo web de código abierto escrito en Python. Django es una herramienta completamente cargada, es decir, viene con extras para ayudar al desarrollo de una web, además es versátil, escalable, rápida y segura.Una de sus principales ventajas es que  levanta una página web de administración donde se pueden hacer acciones como retocar la base de datos. Django sigue el Modelo Vista Plantilla (MVT) como se muestra en la figura 2.6.\\
+Django es un \textit{framework} de desarrollo web de código abierto escrito en Python. Django es una herramienta completamente cargada, es decir, viene con extras para ayudar al desarrollo de una web, además es versátil, escalable, rápida y segura.Una de sus principales ventajas es que  levanta una página web de administración donde se pueden hacer acciones como retocar la base de datos. Django sigue el Modelo Vista Plantilla (MVT) como se muestra en la figura \ref{fig:django}.\\
 
 \begin{figure}[H]
     \centering
@@ -108,17 +108,51 @@ En resumen para formar un servidor en Django primero hay que diseñar el modelo 
 
 En este TFG se utiliza Django en la versión 2.2, el cual es el\textit{ framework} para construir la página web de Unibotics.
 
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Recogida y grabación de datos}
+Para la recogida y grabación de los datos es necesario tener una base de datos, en este caso para este proyecto se ha decidido utilizar una base de datos no relacional (NoSQL\footnote{\textit{Not only SQ}L}). Una base de datos no relacional se caracteriza por almacenar datos no estructurados o semi-estructurados, además sus datos no estan organizados en tablas como era el cao de las bases de datos relacionales. Este tipo de base de datos permite el manejo de un gran volumen de datos.\\
+
+En este TFG se ha utilizado Elasticsearch\footnote{https://www.elastic.co/} el cual es un motor de búsqueda y análisis de código abierto. Elasticsearch esta basado en Lucene, una biblioteca de Java que proporciona funciones de indexación y busqueda entre otras. Esta escrito en Java. Elasticsearch esta orientada a documentos JSON\footnote{JavaScript Object Notation} formado por un conjunto de pares clave-valor, donde la clave esuna cadena de texto y el valor puede ser de diferentes tipos como un texto o una lista.\cite{elastic}\\
+
+Elasticsearch se caracteriza por ser una herramienta rápida permitiendo una búsqueda de texto completo bastante efectiva, además desde la indexación ( grabación de datos en Elasticsearch) y su posterior búsqueda transcurre poco tiempo haciendo de ella una herramienta de casi tiempo real y perfecta para la realización de monitoreos. Es escalable horizontalmente, esto quiere decir que va a poder almacenar una gran cantidad de datos. Los diferentes datos estan agrupados en lo que se llama \textit{shards} en los cuales se aplican técnicas de réplica para ser tolerante a los fallos, además si Elasticsearch tiene algún fallo es capaz de detectarlo y reorganizar la información. Soporta varios lenguajes de programación como PHP o Python.\cite{elastic2}\\
+
+Elasticsearch esta formado por \textit{clusters} que son un conjunto de nodos, en los cuales se almacena todos los datos, también puede estar formado por un único nodo. Al \textit{cluster} se le asigna un nombre y un identificador único. Los nodos que se encuentrar en un \textit{cluster}es un servidor único que almacena documentos y ayuda en las capacidades de indexación del \textit{cluster}, al nodo también se le asigna un nombre y un identificador. Dentro de los nodos se pueden encontrar uno o más índices que son una colección de documentos con características similares, tiene que ser nombrado en minúsculas y será este nombre al que se hará referencia para realizar lasa diferentes operaciones. Los documentos que encontramos en un índice esta formada por la información básica que es recogida.\cite{elastic3}\\
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, keepaspectratio]{img/arquitectura_elastic.png}
+    \caption{Arquitectura Elasticsearch}
+    \label{fig:elastic}
+\end{figure}
+En el caso que se guarde una gran cantidad de documentos sobrepasando los límites de almacenamiento de un nodo, elasticsearch divide cada índice en diferentes fragmentos (\textit{shards}), la distribución de cada fragmento por los diferentes nodos se realiza de forma automática. Para evitar fallos en los nodos se hacen réplicas de los \textit{shards} y se almacenan en un nodo diferente al \textit{shard} primario, así en el caso de que se produzca un fallo en un nodo se podrá seguir trabajando.\\
+
+En este TFG se ha utilizado la versión 7.12.0 de elasticsearch.
+\newpage
+
 \section{Visualización de estadísticas automática}
+
+Una vez ya recogido los datos y almacenados en una base de datos, es la hora de poder visualizarlos para poder hacer un análisis de los resultados. En este proyecto se ha decidido la utilización de la herramienta Dash\footnote{https://dash.plotly.com/} para poder realizar esta tarea. Dash es un \textit{low-code framework} que permite la creación de aplicaciones de análisis, esta escrito sobre Plotly.js y React.js. Se puede desarrollar en los lenguajes de programación Python, Julia, R o F#. Esta preparado para que sea una aplicación multiplataforma y se pueda utilizar en teléfonos móviles.\cite{dash}\\
+
+En las aplicaciones de dash no es necesario escribir ningún documento HTML, JavaScript o CSS ya que Dash proporciona una abstracción pura en Python para ello se utiliza la biblioteca de \texttt{dash\_html\_components}. Otra biblioteca de python que se utiliza en una aplicación dash es \texttt{dash-core-components}el cual son una serie de componentes para una interfaz de usuario interactiva como un menú desplegable.\\
+
+La estructura de los datos que se van a visualizar en  Dash son\textit{ Dataframe} de la biblioteca de Pnadas\footnote{Python Data Analysis Library}. Los datos son guardados en tablas donde cada columna representan las diferentes variables.\\
+
+Las apliaciondes de Dash estan formadas por dos partes la primera es la llamada \textit{layout} donde se describe cual va a ser el aspecto de la aplicación, aquí es donde se utilizaran las bibliotecas mencionadas anteriormente. La asegunda parte es la interactividad con los usuarios, para ello se utiliza \texttt{dash.dependencies} donde los componentes interactivos crean una entrada y a través de\textit{ callbacks }se crea una salida que modifica el \textit{layout} de la aplicación.\\
+
+Para este TFG se ha utilizado Dash en la versión 1.17.0.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
