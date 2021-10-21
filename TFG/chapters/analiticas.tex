@@ -157,7 +157,7 @@ elif end_date is not None:
 \\
 
 Otro filtro también presente en algunas gráficas como en la actividad es el filtro de los usuarios. Este filtro se encuentra además en las gráficas de las evaluaciones de estilo y eficacia del código pero solo para los administradores, así podrán ver las puntuaciones de los diferentes usuarios. Para este filtro se hace uso de las sondas de sesiones (convertidas en dataframes) recogiendo los nombres de los usuarios de forma única y en el caso que también se quiera ver todos los valores de los usuarios en conjunto se ha añadido una opción de 'Total'. El código es el siguiente:
-
+\newpage
 {\footnotesize
 \begin{verbatim}
 	s = Search(using=es, index="session_log")
@@ -194,3 +194,109 @@ return fig
 \newpage
 
 \section{Validación experimental}
+
+En esta sección se muestra los resultados finales de las analíticas con datos reales de la plataforma de Unibotics, donde se verán las diferentes gráficas creadas tanto para administradores como para los usuarios, así como una explicación de lo que representan.\\
+
+La primera gráfica creada se muestra en la figura \ref{fig:sesion} , donde se esta representando en el eje x el tiempo y en el eje y el número de sesiones, dando como resultado una gráfica de linea a la cual se le ha añadido puntos para una mejor visualización. En resumen se pueden ver el numero de sesiones por día independientemente del usuario. La gráfica nos va a dar información de cuando la plataforma esta más visitada, por ejemplo,  en este caso se puede ver como en verano ha habido una bajada de inicios de sesión.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=19cm, keepaspectratio]{img/sesion.png}
+    \caption{Gráfico sesiones por día}
+    \label{fig:sesion}
+\end{figure}
+\newpage
+La figura \ref{fig:time} muestra una gráfica de barras donde en el eje x esta el tiempo y en el eje y la duración total en minutos que los usuarios han estado en la plataforma. Se puede ver que en los mismos ejes hay otra gráfica de linea que señala la media por día. Aquí podemos comprobar que a veces la media coincide con la duración total debido a que solo ha tenido que haber una sesión en ese día.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm, keepaspectratio]{img/time.png}
+    \caption{Gráfico de tiempo en Unibotics}
+    \label{fig:time}
+\end{figure}
+Esta gráfica se puede filtrar tanto por fechas como por usuarios, pudiendo ver el tiempo dedicado de un usuario y la media total del tiempo que usa Unibotics como se puede ver en la figura \ref{fig:time_user}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm, keepaspectratio]{img/time_user.png}
+    \caption{Gráfico de tiempo en Unibotics de un usuario}
+    \label{fig:time_user}
+\end{figure}
+
+La siguiente gráfica circular mostrada en la figura \ref{fig:browser} muestra desde que navegador los usuarios utilizan Unibotics en formato porcentaje con un filtro de fechas. En este caso se ve que una gran parte de inicio de sesiones es a través del navegador de Chrome.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=19cm, keepaspectratio]{img/browser.png}
+    \caption{Gráfico de navegadores}
+    \label{fig:browser}
+\end{figure}
+\newpage
+La gráfica para saber el sistema operativo que utilizan los usuarios es del mismo estilo que la gráfica de los navegadores como se puede ver en la figura \ref{fig:os}. Ambas gráficas tienen filtro por fechas.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{img/os.png}
+    \caption{Gráfico de sistemas operativos}
+    \label{fig:os}
+\end{figure}
+\newpage
+En la figura \ref{fig:mundo} se muestra un mapa geográfico donde cada punto es el lugar donde los usuarios inician sesión. El tamaño de los puntos depende de la cantidad de sesiones, cuanto mayor sea el punto más sesiones hay. A la derecha se encuentra una leyenda con los países, se puede seleccionar uno o varios países en la leyenda para que solo se vean ellos en el mapa. Se puede filtrar por fechas.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{img/mundo.png}
+    \caption{Mapa geográfico de sesiones}
+    \label{fig:mundo}
+\end{figure}
+
+En la siguiente gráfica que se ve en la figura \ref{fig:activity} representa un mapa de calor con la actividad de los usuarios. Esta dividido en cuadrados que representan cada día de un año, cuanto más intenso es el color verde más sesiones ha habido, ha medida que disminuyen las sesiones la intensidad también baja. Tiene un filtro por usuario para ver la actividad por usuarios únicos.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{img/activity.png}
+    \caption{Mapa de calor sesiones}
+    \label{fig:activity}
+\end{figure}
+\newpage
+La última gráfica única para administradores que se muestra en la figura \ref{fig:activity}, es la de usuarios, donde se representa el número total de usuarios que son activos, el número de usuarios que han sido activos en los últimos 2 meses, una gráfica de linea donde se ven el número de registros por cada día, otra gráfica con los registros acumulados por días y la última gráfica se muestra los usuarios activos en los últimos 2 meses, es decir cada día se comprueba cuantos usuarios han iniciado sesión desde 2 meses atrás hasta ese día concretamente. Cada una de estas gráficas contiene su propio filtrado por fechas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{img/users.png}
+    \caption{Gráficas relativas a los usuarios}
+    \label{fig:users}
+\end{figure}
+
+\newpage
+Las siguientes gráficas son las puntuaciones de estilo y eficacia donde los usuarios podrán ver las suyas y los administradores las de cualquier usuario. Actualmente las evaluaciones solo están disponibles en cuatro ejercicios representadas en una gráfica donde cada punto es una nota recibida. La gráfica mostrada en la figura \ref{fig:score} es un ejemplo de las notas de estilo de un usuario de la base de datos de prueba en el ejercicio \textit{follow\_line}. Las gráficas de los demás ejercicios son iguales como las de las puntuaciones de eficacia.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=17cm, keepaspectratio]{img/score.png}
+    \caption{Gráfica de puntuación de estilo}
+    \label{fig:score}
+\end{figure}
+
+En todas estas gráficas se pueden ampliar, disminuir o pasar el cursor sobre alguno de sus puntos dándote una mayor información.
+
+
+
+
+
+
+
+
+
