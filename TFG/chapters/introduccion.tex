@@ -1,6 +1,6 @@
 \chapter{Introducción}
 \label{chap:introduccion} 
-El principal punto de este Trabajo de Fin de Grado (TFG) es el monitoreo de la página web educativa de robótica \textit{Unibotics} \footnote{https://unibotics.org/}. La educación ha cambiado a lo largo de los años, actualmente es difícil no encontrar un aula donde las tecnologías web están muy presentes y más en el ambiente universitario. Para poder realizar una página web competitiva en el mercado y además atrayente al usuario es imprescindible hacer una recogida de la interactividad que el usuario tiene con la página web, guardar esos datos y después poder visualizarlos para poder hacer un correcto análisis de estos. \\
+La educación ha cambiado a lo largo de los años, actualmente es difícil no encontrar un aula donde las tecnologías web están muy presentes y más en el ambiente universitario. Para poder realizar una página web competitiva en el mercado y además atrayente al usuario es imprescindible hacer una recogida de la interactividad que el usuario tiene con la plataforma web, guardar esos datos y después poder visualizarlos para poder hacer un correcto análisis de estos.  Se desea hacer un análisis de Unibotics \footnote{https://unibotics.org/} para poder hacer una plataforma eficiente como por ejemplo adaptar la plataforma a los sistemas operativos que utilizan los usuarios.\\
 
 En este capítulo se va hablar de los elementos clave en los que se basa este trabajo que son las tecnologías web, la robótica educativa y se introducirá en qué consiste un monitoreo y análisis de una página web.
 
@@ -12,14 +12,14 @@ Las Tecnologías web se remontan desde 1970 donde el departamento de defensa de 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=20cm, keepaspectratio]{img/first_web_page.png}
+    \includegraphics[width=16cm, keepaspectratio]{img/first_web_page.png}
     \caption{Primera página web}
     \label{fig:web}
 \end{figure}
 
-En la actualidad las principales ventajas de las tecnologías web son que se pueden utilizar en cualquier dispositivo, no es necesario la instalación de nada y su usabilidad es sencilla, pero dependen de Internet.\cite{juan}
+En la actualidad las principales ventajas de las tecnologías web son que se pueden utilizar en cualquier dispositivo, el usuario no necesita instalar nada más allá de un navegador web y su usabilidad es sencilla, pero dependen de Internet.\cite{juan}
 
-La web utiliza el modelo Cliente-Servidor, en el que el cliente hace peticiones al servidor esperando una respuesta de este. Un mismo cliente puede estar conectado con varios servidores y a la vez interactúa con el usuario final normalmente a través de una interfaz gráfica. La parte del servidor se encarga de recibir las peticiones, analizarlas y procesarlas para enviar una respuesta. A continuación, se habla de las diferentes tecnologías que nos podemos encontrar en el lado cliente y servidor
+Las páginas Web modernas utilizan el modelo Cliente-Servidor, en el que el cliente hace peticiones al servidor esperando una respuesta de este. Un mismo cliente puede estar conectado con varios servidores y a la vez interactúa con el usuario final normalmente a través de una interfaz gráfica. La parte del servidor se encarga de recibir las peticiones, analizarlas y procesarlas para enviar una respuesta. En las siguientes subsecciones, describimos algunas de las tecnologías más populares utilizadas en el desarrollo de páginas Web.
 
 \begin{figure}[H]
     \centering
@@ -38,7 +38,7 @@ Las tecnologías del lado del cliente suelen recibir el nombre de \textit{fronte
 \end{itemize}
 \newpage
 \subsection{Tecnologías web del lado del servidor}
-Las tecnologías web del lado del servidor también llamadas \textit{backend }son las encargadas de procesar las peticiones del cliente y enviar una respuesta en forma de páginas HTML. Normalmente se utilizan \textit{frameworks }que son herramientas que te permiten desarrollar una aplicación web de forma ágil y sencilla a partir de librerías o funciones ya creadas. Algunos de estos \textit{frameworks} son:
+Las tecnologías web del lado del servidor también llamadas \textit{backend} son las encargadas de procesar las peticiones del cliente y enviar una respuesta en forma de páginas HTML. Normalmente se utilizan \textit{frameworks }que son herramientas que te permiten desarrollar una aplicación web de forma ágil y sencilla a partir de librerías o funciones ya creadas. Algunos de estos \textit{frameworks} son:
 
 \begin{itemize}
   \item \textbf{Django}: Está escrito en código Python. Django hace uso de plantillas permitiendo hacer páginas web más rápidas y sencillas. Gracias a su ORM \footnote{Object Relational Mapping
@@ -46,6 +46,7 @@ Las tecnologías web del lado del servidor también llamadas \textit{backend }so
   \item \textbf{Node.js}: Permite ejecutar código JavaScript fuera del navegador construido con el motor de JavaScript V8 de Chrome. Node.js utiliza un modelo de entrada y salida no bloqueante, no espera a que los procesos finalicen.
   \item \textbf{Symfony}: Utiliza de lenguaje de programación PHP \footnote{Hypertext Preprocessor}. Está basado en el patrón Modelo Vista Controlador (MVC). Symfony es muy flexible permitiéndote instalar únicamente lo que se necesite en vez del \textit{framework} completo.
   \item \textbf{Spring Boot}: Desarrollado para aplicaciones programadas en Java, surgió debido a que el Spring Framework era difícil de configurar. 
+\item \textbf{Lavarel}: Framework de PHP. En comparación con otros \textit{frameworks }PHP su curva de aprendizaje es más baja. Es flexible y adaptable no solamente al MVC sino propone utilizar \textit{routes with clousures} a causa de lo cual reduce código.\cite{lavarel}
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%

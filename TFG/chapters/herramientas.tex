@@ -1,6 +1,6 @@
 \chapter{Herramientas utilizadas}
 \label{herramientas}
-En este capítulo se va a describir las tecnologías web que se han utilizado en este proyecto. Para desarrollar Unibotics se ha utilizado como tecnologías del lado del cliente HTML para dar estructura, CSS para el diseño y JavaScript para definir las acciones, las tecnologías del lado del servidor han sido el \textit{framework} de Django y base de datos SQL\footnote{Structured Query Language}. Se añadió una nueva base de datos llamada Elasticsearch y como visualización de estadísticas automáticas se ha utilizado Dash.
+En este capítulo se describen las tecnologías web que se han utilizado en este TFG. Para añadir la recogida de sondas a Unibotics se ha utilizado como tecnologías del lado del cliente HTML para dar estructura, CSS para el diseño y JavaScript para definir las acciones, las tecnologías del lado del servidor han sido el \textit{framework} de Django y base de datos SQL\footnote{Structured Query Language}.Se ha integrado una base de datos llamada Elasticsearch para la recogida de la información y como visualización de estadísticas automáticas se ha utilizado Dash.
 \section{Tecnologías web}
 En esta sección se hablará de las diferentes tecnologías que forman Unibotics, la plataforma web educativa donde se realiza este trabajo y las cuales han sido usadas para llevar acabo los objetivos de este.
 \subsection{HTML}
@@ -50,11 +50,31 @@ A la hora de utilizar estilos se puede poner estilos contradictorios en este cas
 \subsection{JavaScript}
 JavaScript es un lenguaje de programación interpretado que permite la ejecución de código orientado a eventos.Pueden actuar sobre el navegador a través de objetos integrados como un botón. El DOM\footnote{Document Object Model}, API que representa al documento y define la manera de interactuar con él, puede ser modificado dinámicamente gracias a JavaScript. Es importante la colocación del código JavaScript ya que se ejecuta ordenadamente de arriba a abajo. \\
 
-JavaScript puede estar en el lado del cliente haciendo que su código se ejecute en el navegador donde podrá interactuar con este, además podrá intercatuar con el documento HTML o dibujar en la página. En el lado del servidor también se puede encontrar código JavaScript pero en este caso se ejecutará en el servidor obteniendo acceso a todos los recursos, el resultado de la ejecución se manda al navegador que se lo mostrará al usuario final. Como lenguaje JavaScript en el lado servidor se tiene por ejemplo el entorno Node.js\footnote{https://nodejs.org/}.\cite{juan4}\\
+JavaScript puede estar en el lado del cliente haciendo que su código se ejecute en el navegador donde podrá interactuar con el navegador, además podrá interactuar con el documento HTML o dibujar en la página. También existen \textit{frameworks} para el desarrollo de la parte servidor de una plataforma Web basados en JavaScript, como Node.js\footnote{https://nodejs.org/}.\cite{juan4}\\
 
-Hay diferentes formas de agregar código JavaScript a un documento HTML, como ocurría con CSS la mejor opción es tener un fichero.js separado de la estructura (HTML) y el estilo (CSS) para poder trabajar de una mejor manera, para añadirlo en la cabecera del HTML se le inserta la etiqueta {\textless script\textgreater} con el atributo \textit{src} para indicar la ubicación del fichero. Para que no haya ningún problema conviene ejecutar el código cuando se haya cargado la página para ellos se utiliza el atributo \textit{onload} que indica que se ha cargado la página y se llama a una función principal del fichero JavaScript. Otras formas de introducir JavaScript en el documento HTML es directamente en sus etiquetas por ejemplo cuando ocurre un evento o  en el contenido de la etiqueta {\textless script\textgreater}.\cite{js}\\
+Hay diferentes formas de agregar código JavaScript a un documento HTML, como ocurría con CSS la mejor opción es tener un fichero .js separado de la estructura (HTML) y el estilo (CSS) para poder trabajar de una mejor manera, para añadirlo en la cabecera del HTML se le inserta la etiqueta {\textless script\textgreater} con el atributo \textit{src} para indicar la ubicación del fichero. Para que no haya ningún problema conviene ejecutar el código cuando se haya cargado la página para ellos se utiliza el atributo \textit{onload} que indica que se ha cargado la página y se llama a una función principal del fichero JavaScript. Otra forma de introducir JavaScript en el documento HTML es directamente en sus etiquetas por ejemplo cuando ocurre un evento o mediante la etiqueta {\textless script\textgreater} que ofrece HTML .\cite{js}\\
 
-En este TFG se ha utilizado JavaScript para detectar las diferentes interacciones de los usuarios en la página web a través de eventos. También se ha hecho uso de JQuery\footnote{https://jquery.com/}, una librería de JavaScript que hace más sencilla la programación en JavaScript. Para la apicación de Dash como visualizador de datos se ha utilizado Bootstrap\footnote{https://getbootstrap.com/}, un complemeto de JavaScript para añadir diseño a las páginas web.
+En este TFG se ha utilizado JavaScript para detectar las diferentes interacciones de los usuarios en la página web a través de eventos. También se ha hecho uso de JQuery\footnote{https://jquery.com/}, una librería de JavaScript que permite una manipulación más sencilla del DOM y de los eventos que se generan en éste. 
+
+\subsection{Django}
+Django es un \textit{framework} de desarrollo web de código abierto escrito en Python. Django es un \textit{framework} que actualmente dispone de mucha funcionalidad, es decir, viene con extras para ayudar al desarrollo de una web, además es versátil, escalable, rápida y segura.Una de sus principales ventajas es que  levanta una página web de administración donde se pueden hacer acciones como retocar la base de datos. Django sigue el Modelo Vista Plantilla (MVT) como se muestra en la figura \ref{fig:django}.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, keepaspectratio]{img/django.png}
+    \caption{Estructura de Django}
+    \label{fig:django}
+\end{figure}
+
+Los modelos en Django son objetos en Python que son guardados en una base de datos. Los modelos son independientes al gestor de base de datos que se vaya a utilizar, se definen las estructuras de información de una manera genérica y además se puede añadir restricciones. Django puede traducir filtros de python en SQL gracias a su ORM, por lo tanto no es necesario saber lenguaje de datos. Los modelos estan formado por una lista de campos donde se define el dominio de cada campo, si no hay ningún campo que tenga una clave primaria, Django generará una columna llamada id que se incrementará automáticamente. Los modelos se escriben en el fichero \textit{models.py}.\cite{model}\\
+
+Las vistas en Django esta formado por el fichero \textit{urls.py} y \textit{views.py}. En el fichero\textit{ urls.py} a partir de expresiones regulares se definen las urls que redirigen a funciones de \textit{views.py.} La función \textit{views.py} recibe un objeto \textit{HTTP Request} y todos los parámetros de la URL capturados teniendo que devolver un objeto \textit{HTTP Response}. Lo habitual en web dinámicas es hacer una consulta a la base de datos, generar un contexto que empotra en una plantilla y a través la cual se renderiza devolviendo un HTTP Response.\\
+
+Las plantillas son páginas dinámicas, es decir, son protopáginas la cuales solo se pueden renderizar juntando el contexto (diccionario con los valores que dan contexto a una plantilla) pasado por las vistas y gracias al lenguaje de plantillas dando como resultado normalmente un documento HTML. Esto es útil al programar ya que permite hacer páginas dinámicas en pocas líneas\\
+
+En resumen para formar un servidor en Django primero hay que diseñar el modelo de datos, luego se diseñan las urls que enrutaran a las vistas las cuales preparan un contexto que juntándolo con la plantilla se genera el HTTP Response.\\
+
+La versión actual de Unibotics está basada en Django 2.2.
 
 \subsection{SQL}
 SQL\footnote{Structured Query Language} es un lenguaje de de consulta estructurado, se utiliza para definir, manipular y gestionar los datos almacenados en una base de datos relacional. SQL es un estándar reconocido en 1986 por ANSI\footnote{American National Standards Institute} y en 1987 por ISO\footnote{International Organization for Standardization}\\
@@ -75,7 +95,6 @@ Una instrucción SQL esta formada por comandos, cláusulas, operadores y funcion
 \item TCL (\textit{Transactional Control Language}): su función es administrar los cambios en los datos. De este tipo de comandos se tiene \textit{COMMIT} para guardar el trabajo realizado o \textit{ROLLBACK} para deshacer las últimas modificaciones hechas después del último \textit{COMMIT}
 \end{itemize}
 
-\newpage
 Las cláusulas son condiciones de modificación para poder definir los datos. Las cláusulas más importantes son \textit{FROM} para especificar la tabla, \textit{WHERE} para definir las condiciones de los registros que se desean, \textit{GROUP BY} para hacer agrupaciones específicas de registros, \textit{HAVING} para declarar la condición que debe cumplir cada grupo, \textit{ORDER BY} para que los registros sigan un orden especificado.\\
 
 Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \textit{NOT}) o de comparación que serían las operaciones del estilo mayor que, menor que o igual que. Las funciones se utilizan con el comando \textit{SELECT} para devolver un único valor de un grupo de registros como puede ser\textit{ AVG }que te devuelve la media o \textit{COUNT }para devolver el número de registros. En la figura \ref{fig:ejsql} se muestra un ejemplo de una sentencia SQL con con todas sus partes.\cite{sql}\\
@@ -86,34 +105,14 @@ Los operadores pueden ser lógicos, por ejemplo, \textit{AND}, \textit{OR} o \te
     \caption{Sentencia SQL}
     \label{fig:ejsql}
 \end{figure}
-En este TFG se ha utilizado SQL para acceder a la base de datos de usuarios de Unibotics.
-
-\subsection{Django}
-Django es un \textit{framework} de desarrollo web de código abierto escrito en Python. Django es una herramienta completamente cargada, es decir, viene con extras para ayudar al desarrollo de una web, además es versátil, escalable, rápida y segura.Una de sus principales ventajas es que  levanta una página web de administración donde se pueden hacer acciones como retocar la base de datos. Django sigue el Modelo Vista Plantilla (MVT) como se muestra en la figura \ref{fig:django}.\\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, keepaspectratio]{img/django.png}
-    \caption{Estructura de Django}
-    \label{fig:django}
-\end{figure}
-
-Los modelos en Django son objetos en Python que son guardados en una base de datos. Los modelos son independientes al gestor de base de datos que se vaya a utilizar, se definen las estructuras de información de una manera genérica y además se puede añadir restricciones. Django puede traducir filtros de python en SQL gracias a su ORM, por lo tanto no es necesario saber lenguaje de datos. Los modelos estan formado por una lista de campos donde se define que tipo de datos es, si no hay ningún campo que tenga una clave primaria, Django generará una columna llamada id que se incrementará automáticamente. Los modelos se escriben en el fichero Models.py.\cite{model}\\
-
-Las vistas en Django esta formado por el fichero urls.py y views.py. En el fichero urls.py a partir de expresiones regulares se definen la urls que redirigen a funciones de views.py. La función views.py recibe un objeto HTTP Request y todos los parámetros de la URL capturados teniendo que devolver un objeto HTTP Response. Lo habitual en web dinámicas es hacer una consulta a la base de datos, generar un contexto que empotra en una plantilla y a través la cual se renderiza devolviendo un HTTP Response.\\
-
-Las plantillas son páginas dinámicas, es decir, son protopáginas la cuales solo se pueden renderizar juntando el contexto pasado por las vistas y gracias al lenguaje de plantillas dando como resultado normalmente un documento HTML. Esto es útil al programar ya que permite hacer páginas dinámicas en pocas líneas\\
-\newpage
-En resumen para formar un servidor en Django primero hay que diseñar el modelo de datos, luego se diseñan las urls que enrutaran a las vistas las cuales preparan un contexto que juntándolo con la plantilla se genera el HTTP Response.\\
-
-En este TFG se utiliza Django en la versión 2.2, el cual es el\textit{ framework} para construir la página web de Unibotics.
+En este TFG se ha utilizado SQL ya que Unibotics dispone de una base de datos MySQL donde se almacena la información estructural de la plataforma como los usuarios o ejercicios, a la cual se accede a través de Django.
 
 \section{Recogida y grabación de datos}
-Para la recogida y grabación de los datos es necesario tener una base de datos, en este caso para este proyecto se ha decidido utilizar una base de datos no relacional (NoSQL\footnote{\textit{Not only SQ}L}). Una base de datos no relacional se caracteriza por almacenar datos no estructurados o semi-estructurados, además sus datos no estan organizados en tablas como era el caso de las bases de datos relacionales. Este tipo de base de datos permite el manejo de un gran volumen de datos.\\
+Para la recogida y grabación de las sondas es necesario tener una base de datos, en este caso para este proyecto se ha decidido utilizar una base de datos no relacional (NoSQL\footnote{\textit{Not only SQ}L}). Una base de datos no relacional se caracteriza por almacenar datos no estructurados o semi-estructurados, además sus datos no están organizados en tablas como era el caso de las bases de datos relacionales por ejemplo MySQL.\\
 
-En este TFG se ha utilizado Elasticsearch\footnote{https://www.elastic.co/} el cual es un motor de búsqueda y análisis de código abierto. Elasticsearch esta basado en Lucene, una biblioteca de Java que proporciona funciones de indexación y busqueda entre otras. Esta escrito en Java. Elasticsearch esta orientada a documentos JSON\footnote{JavaScript Object Notation} formado por un conjunto de pares clave-valor, donde la clave es una cadena de texto y el valor puede ser de diferentes tipos como un texto o una lista.\cite{elastic}\\
+En este TFG se ha utilizado Elasticsearch\footnote{https://www.elastic.co/}, el cual es un motor de búsqueda y análisis de código abierto, escrito en Java y basado en Lucene, una biblioteca de Java que proporciona funciones de indexación y búsqueda entre otras. Elasticsearch está orientado a documentos JSON\footnote{JavaScript Object Notation} formado por un conjunto de pares clave-valor, donde la clave es una cadena de texto y el valor puede ser de diferentes tipos como un texto o una lista.\cite{elastic}\\
 
-Elasticsearch se caracteriza por ser una herramienta rápida permitiendo una búsqueda de texto completo bastante efectiva, además desde la indexación ( grabación de datos en Elasticsearch) y su posterior búsqueda transcurre poco tiempo haciendo de ella una herramienta de casi tiempo real y perfecta para la realización de monitoreos. Es escalable horizontalmente, esto quiere decir que va a poder almacenar una gran cantidad de datos. Los diferentes datos están agrupados en lo que se llama \textit{shards} en los cuales se aplican técnicas de réplica para ser tolerante a los fallos, además si Elasticsearch tiene algún fallo es capaz de detectarlo y reorganizar la información. Soporta varios lenguajes de programación como PHP o Python.\cite{elastic2}\\
+Elasticsearch se caracteriza por ser una herramienta rápida permitiendo una búsqueda de texto completo bastante eficiente. Gracias al poco tiempo transcurrido entre la indexación (grabación de datos en Elasticsearch) y la posterior búsqueda hemos considerado que se trata de una herramienta adecuada para la grabación de las sondas y la posterior consulta de la información. Una de las ventajas de las bases de datos no relacionales es que están implementadas para permitir un escalado horizontal, es decir se puede dividir la base de datos en diferentes servidores, de una manera más sencilla que con las bases de datos relacionales. Los diferentes datos están agrupados en lo que se llama \textit{shards} en los cuales se aplican técnicas de réplica para ser tolerante a los fallos, además si Elasticsearch tiene algún fallo es capaz de detectarlo y reorganizar la información. Existen diferentes módulos en diferentes lenguajes de programación que permiten una interacción sencilla con Elasticsearch.\cite{elastic2}\\
 
 Elasticsearch esta formado por \textit{clusters} que son un conjunto de nodos, en los cuales se almacena todos los datos, también puede estar formado por un único nodo. Al \textit{cluster} se le asigna un nombre y un identificador único. Los nodos que se encuentran en un \textit{cluster} son unos servidores únicos que almacenan documentos y ayuda en las capacidades de indexación del \textit{cluster}, al nodo también se le asigna un nombre y un identificador. Dentro de los nodos se pueden encontrar uno o más índices que son una colección de documentos con características similares, tiene que ser nombrado en minúsculas y será este nombre al que se hará referencia para realizar las diferentes operaciones. Los documentos que encontramos en un índice esta formada por la información básica que es recogida.\cite{elastic3}\\
 
@@ -132,13 +131,13 @@ En este TFG se ha utilizado la versión 7.12.0 de Elasticsearch.
 
 \section{Visualización de estadísticas automática}
 
-Una vez ya recogido los datos y almacenados en una base de datos, es la hora de poder visualizarlos para poder hacer un análisis de los resultados. En este proyecto se ha decidido la utilización de la herramienta Dash\footnote{https://dash.plotly.com/} para poder realizar esta tarea. Dash es un \textit{low-code framework} que permite la creación de aplicaciones de análisis, esta escrito sobre Plotly.js y React.js. Se puede desarrollar en los lenguajes de programación Python, Julia, R o F#. Esta preparado para que sea una aplicación multiplataforma y se pueda utilizar en teléfonos móviles.\cite{dash}\\
+Una vez ya recogido las sondas y se han almacenado en Elasticsearch, es la hora de poder visualizarlos para poder hacer un análisis de los resultados. En este TFG se ha decidido utilizar el \textit{framework }Dash\footnote{https://dash.plotly.com/} para poder realizar esta tarea. Dash es un \textit{low-code framework}, es decir que permite la creación de aplicaciones de manera rápida y eficiente haciendo un menor uso de la programación manual, está escrito sobre Plotly.js y React.js. Dash está disponible en lenguajes de programación como Python, Julia, R o F#. Dash es multiplataforma, por lo que puede ser utilizado desde cualquier dispositivo.\cite{dash}\\
 
-En las aplicaciones de dash no es necesario escribir ningún documento HTML, JavaScript o CSS ya que Dash proporciona una abstracción pura en Python para ello se utiliza la biblioteca de \texttt{dash\_html\_components}. Otra biblioteca de python que se utiliza en una aplicación Dash es \texttt{dash-core-components} el cual son una serie de componentes para una interfaz de usuario interactiva como un menú desplegable.\\
+En las aplicaciones de dash no es necesario escribir ningún documento HTML, JavaScript o CSS ya que Dash proporciona una abstracción pura en Python mediante el uso de la biblioteca de \texttt{dash\_html\_components}. Otra biblioteca de python que se utiliza en una aplicación Dash es \texttt{dash-core-components} el cual son una serie de componentes para una interfaz de usuario interactiva como un menú desplegable.\\
 
-La estructura de los datos que se van a visualizar en  Dash son\textit{ Dataframe} de la biblioteca de Pandas\footnote{Python Data Analysis Library}. Los datos son guardados en tablas donde cada columna representan las diferentes variables.\\
+La estructura de los datos que se van a visualizar en  Dash son\textit{ Dataframe} de la biblioteca de Pandas\footnote{Python Data Analysis Library}. Un DataFrame es una tabla en la que los datos guardados en cada columna representan las diferentes variables.\\
 
-Las aplicaciones de Dash están formadas por dos partes la primera es la llamada \textit{layout} donde se describe cual va a ser el aspecto de la aplicación, aquí es donde se utilizaran las bibliotecas mencionadas anteriormente. La segunda parte es la interactividad con los usuarios, para ello se utiliza \texttt{dash.dependencies} donde los componentes interactivos crean una entrada y a través de\textit{ callbacks }se crea una salida que modifica el \textit{layout} de la aplicación.\\
+Las aplicaciones de Dash están formadas por dos partes la primera es la llamada \textit{layout} donde se describe cual va a ser el aspecto de la aplicación, esto son los menús y las gráficas que se visualizan, aquí es donde se utilizaran las bibliotecas mencionadas anteriormente. La segunda parte es la interactividad con los usuarios, para ello se utiliza \texttt{dash.dependencies} donde los componentes interactivos crean una entrada y a través de \textit{callbacks} modifican las gráficas, de tal manera que se pueden integrar filtros para generar diferentes visualizaciones en base a las necesidades del usuario.\\
 
 Para este TFG se ha utilizado Dash en la versión 1.17.0.
 

@@ -5,14 +5,14 @@ En este capítulo de TFG se va a exponer los diferentes objetivos, la metodolog�
 
 \section{Objetivos}
 
-El objetivo principal que sigue este proyecto es la creación de una aplicación donde se monitorea y se analiza la plataforma web educativa Unibotics. En esta página web de análisis se desea que puedan acceder los administradores para poder comprobar y analizar como interactúan los usuarios con la página, además de poder ver su progreso en los diferentes ejercicios. También se quiere que los usuarios puedan tener un control sobre la evaluación de sus ejercicios. Para cumplir el objetivo principal se ha marcado diferentes subjetivos:
+El objetivo principal que sigue este proyecto es la integración de una aplicación donde se monitorea y se analiza la plataforma web educativa Unibotics. En esta página web de análisis se desea que puedan acceder los administradores para poder comprobar y analizar como interactúan los usuarios con la página, además de poder ver su progreso en los diferentes ejercicios. También se quiere que los usuarios puedan ver un histórico de sus puntuaciones para que puedan evaluar su desempeño. Para cumplir el objetivo principal se ha marcado diferentes subjetivos:
 
 \begin{itemize}
 \item Capturar las diferentes interacciones de los usuarios como puede ser el tiempo que un usuario esta en la plataforma Unibotics. Esos datos recogidos son llamados sondas. Estas sondas serán capturadas en el servidor de Django que tiene Unibotics.
 
-\item La grabación de las diferentes sondas en una base de datos.
+\item La grabación de las sondas en una base de datos.
 
-\item Creación de gráficas sintéticas a través de las sondas recogidas para poder realizar análisis.
+\item Creación de gráficas dinámicas a través de las sondas recogidas para poder realizar análisis.
 \end{itemize}
 
 \newpage
@@ -20,20 +20,20 @@ El objetivo principal que sigue este proyecto es la creación de una aplicación
  
 \section{Metodología}
 
-La metodología seguida en este proyecto ha comenzado con la planificación de reuniones semanales con los tutores En estas reuniones semanales se hace un repaso de lo avanzado durante toda la semana y se fijan los nuevos objetivos para la semana siguiente. Estas reuniones han sido beneficiosas ya que permitía resolver las dudas más inmediatas y realizar un trabajo continuado. Gracias a la plataforma de Slack\footnote{https://slack.com/} se ha podido mantener la comunicación a lo largo de la semana y poder resolver dudas de una manera más dinámica, también en esta plataforma se encontraba un grupo con los administradores de Unibotics donde se soluciona los problemas relacionados con la plataforma.\\
+La metodología seguida en este proyecto ha comenzado con la planificación de reuniones semanales con los tutores En estas reuniones semanales se hace un repaso de lo avanzado durante toda la semana y se fijan los nuevos objetivos para la semana siguiente. Estas reuniones han sido beneficiosas ya que permitía resolver las dudas más inmediatas y realizar un trabajo continuado. Gracias a la plataforma de Slack\footnote{https://slack.com/} se ha podido mantener la comunicación a lo largo de la semana y poder resolver dudas de una manera más dinámica. También en esta plataforma se encontraba un grupo con los administradores de Unibotics donde se soluciona los problemas relacionados con la plataforma.\\
 
-Para poder hacer el seguimiento del trabajo se ha creado un blog\footnote{https://roboticslaburjc.github.io/2021-tfg-claudia-alvarez/}, donde cada cierto tiempo se ha escrito sobre los avances del proyecto. El blog ha sido creado con \textit{Github-Pages}\footnote{https://pages.github.com/}\\
+Para poder hacer el seguimiento del trabajo se ha creado un blog\footnote{https://roboticslaburjc.github.io/2021-tfg-claudia-alvarez/}, donde periódicamente se han ido escribiendo los avances realizados.. El blog ha sido creado con \textit{Github-Pages}\footnote{https://pages.github.com/}\\
 
-Para comenzar a realizar el TFG se ha realizado un primer estudio del código de Unibotics para poder entender el funcionamiento y así añadir el código de mejora. Cuando se ha fijado un objetivo semanal en el que hubiera que añadir código nuevo, lo primero se creaba una incidencia o \textit{isuue} describiendo el problema por lo que se creaba una nueva rama o \textit{branch } en la que se trabajaba en el código para no modificar el código original, una vez conseguido solucionar la incidencia se crea un parche o \textit{pull request} con la solución donde los administradores de la plataforma lo revisan y si esta todo bien fusionan la rama creada con la original, lo que se llama hacer un \textit{merge}.\\
+Para comenzar a realizar el TFG se ha realizado un primer estudio del código de Unibotics para poder entender el funcionamiento y así añadir el código de mejora. Cuando se ha fijado un objetivo semanal en el que hubiera que añadir código nuevo, lo primero se creaba una incidencia o \textit{isuue} describiendo el problema por lo que se creaba una nueva rama o \textit{branch} en la que se trabajaba en el código para no modificar el código original, una vez conseguido solucionar la incidencia se crea un parche o \textit{pull request} con la solución donde los administradores de la plataforma lo revisan y si esta todo bien fusionan la rama creada con la original, lo que se llama hacer un \textit{merge}.\\
 
-Antes de la utilización de nuevas herramientas para realizar este TFG se ha realizado un estudio previo de estas, para poder utilizarlas de una mejor manera. A medida que ha ido avanzando el TFG se ha decidido que sondas convendrían mejor para el monitoreado de la plataforma.
+Antes de la utilización de los componentes, como Elasticsearch o Dash,  para llevar a cabo este TFG se ha realizado un estudio previo de estos, para poder utilizarlos de una mejor manera. A medida que ha ido avanzando el TFG se ha decidido que sondas convendrían mejor para el monitoreado de la plataforma.
 
 \newpage
 \section{Plan de Trabajo}
 El plan de trabajo consta de varias etapas:
 
 \begin{itemize}
-\item \textbf{Unibotics  y repaso de tecnologías web}: Estudio del código de Unibotics y repaso de las tecnologías web utilizadas en él, que son JavaScript, HTML y CSS.
+\item \textbf{Unibotics  y repaso de tecnologías web}: Estudio del código de Unibotics y repaso de las tecnologías web utilizadas en la plataforma.
 
 \item \textbf{Estudio de los componentes y herramientas utilizadas}: Estudio de los diferentes componentes utilizados empezando por Django, después se estudió la base de datos Elasticsearch y el visualizador Dash y por último la herramienta \textit{docker container} .
 
