@@ -1,0 +1,39 @@
+\chapter{Conclusiones y trabajos futuros}\label{conclusión}
+
+	En este último capítulo se manifiesta las conclusiones alcanzadas, así como las competencias adquiridas al realizar este TFG y futuros trabajos.
+	
+	\section{Conclusiones finales} 
+	\label{sec:conclusiones_finales} 
+En conclusión el objetivo principal de este TFG se ha cumplido con éxito, el cual consistía en integrar analíticas automáticas en Unibotics. Gracias a que los usuarios tienen que iniciar sesión cuando quieren ver las analíticas, se ha podido detectar si se trata de un administrador o no y así mostrar diferentes contenidos, esto era parte del objetivo principal que se menciona en la subsección 2.1. Analizando los subjetivos llegamos a las siguientes conclusiones:\\
+
+\begin{itemize}
+\item  Se ha conseguido recoger sondas en Unibotics. Con la utilización de la herramienta de Elasticsearch se ha podido capturar y guardar las interacciones de los usuarios en la plataforma. Además se ha creado un nuevo botón en los ejercicios para poder recoger las sondas relativas a la puntuación de la eficacia del código. A parte de la sonda mencionada anteriormente, se han recogido las sondas relativas al inicio y fin de sesión, de los ejercicios y de la puntuación de estilo.
+\item Se ha podido integrar las gráficas dinámicas gracias al \textit{framework} Dash, que ha permitido de una manera sencilla y potente la visualización de las sondas recogidas con Elasticserach. En estas visualizaciones se han añadido filtros para un análisis más detallado.
+\end{itemize}
+
+	\section{Competencias adquiridas} 
+	\label{sec:competencias_adquiridas} 
+	Durante la realización del TFG he adquirido las siguientes competencias:
+		
+		\begin{itemize}
+			\item Ampliado mis conocimientos sobre las tecnologías web, tanto el \textit{framework} de Django como 		HTML, CSS y JavaScript.
+			
+			\item Conocer como funciona una base de datos en un proyecto real, en el caso de MySQL y saber desplegar e integrar una nueva base de datos, Elasticsearch. Importancia de la información para monitorizar un servicio web. 
+			
+			\item Comprender las tecnologías de visualizaciones automáticas de la información gracias a Dash, la cual es una herramienta rápida y eficiente.
+			
+			\item Aprender a utilizar GitHub como repositorio donde desarrollar proyectos en equipo, haciendo uso de incidencias y parches. 
+			
+			\item Trabajar en un una plataforma que esta en continuo desarrollo, donde se han creado nuevas funcionalidades y trabajar en un equipo gracias a diferentes plataformas como puede ser Slack como método de comunicación.			
+		\end{itemize}
+	\section{Trabajos futuros} 
+	\label{sec:trabajos_futuros} 
+
+		En esta sección se proponen futuras linea de trabajo para poder mejorar las analíticas automáticas:
+
+		\begin{itemize}
+			\item Enriquecer las sondas que se encuentran en Unibotics añadiendo nuevas o añadiendo nuevos campos a los índices creados para recabar más información sobre el uso de la plataforma. Actualmente las sondas de puntuación de estilo y de eficacia solo se encuentran en cuatro ejercicios, así que se podrían añadir a los nuevos ejercicios que sean creados añadiéndoles un evaluador de eficacia automático que algunos no poseen. Para recoger nuevas sondas será necesario la creación de nuevos índices en Elasticsearch y nuevas visualizaciones en la aplicación de Dash.\\
+\item Incorporar a Elasticsearch medidas de rendimiento en el servidor web. El servidor esta corriendo en \textit{Amazon web services} en producción por lo que se pueden añadir métricas de memoria ocupada o CPU consumida entre otras, luego se podrá correlar esas métricas con las sondas actuales tales como el número de usuarios activos en la plataforma.
+
+\item En este TFG se ha visualizado las sondas con los datos directamente recogidos, el siguiente paso que se podría hacer es correlar las sondas recogidas, es decir, por ejemplo saber si el tiempo en el que realizan un ejercicio afecta la nota obtenida en el ejercicio. Esto nos permite hacer análisis estadísticos o investigaciones científicas como por ejemplo el efecto de la \textit{gameficación}.\\
+		\end{itemize}
