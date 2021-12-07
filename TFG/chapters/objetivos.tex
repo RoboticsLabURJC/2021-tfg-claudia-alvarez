@@ -1,56 +1,47 @@
 \chapter{Objetivos y Metodología del Trabajo}\label{objetivos}
 
-En este capítulo de TFG se va a exponer los diferentes objetivos, la metodología seguida para la realización del proyecto, el plan de trabajo y la motivación para escoger el tema.
+En los últimos años el uso de plataformas web educativa ha ido incrementándose y más en los tiempos de pandemia donde se ha tenido que cambiar la educación presencial por una \textit{online}. Por esta razón cada vez más profesores buscan llamar la atención de sus alumnos a la hora de aprender y esto es lo que ocurre con la plataforma de Unibotics.\\
+
+Para que la plataforma pueda mejorarse y ser más atrayente a los alumnos es necesario hacer una monitorización de su uso y posterior análisis, donde los administradores podrán ver cómo los usuarios interactúan con la plataforma y tomar decisiones a partir de los resultados. Los administradores, por lo tanto, podrán ver por ejemplo cuánto tiempo los alumnos tardan en resolver un ejercicio y qué nota obtienen de ello, pudiendo hacer correlaciones entre los datos obtenidos.\\
+
+Para conseguir que Unibotics cuente con las mejoras mencionadas, se han establecido los siguientes objetivos, metodología y plan de trabajo.
 
 
 \section{Objetivos}
 
-El objetivo principal que sigue este proyecto es la integración de una aplicación donde se monitorea y se analiza la plataforma web educativa Unibotics. En esta página web de análisis se desea que puedan acceder los administradores para poder comprobar y analizar como interactúan los usuarios con la página, además de poder ver su progreso en los diferentes ejercicios. También se quiere que los usuarios puedan ver un histórico de sus puntuaciones para que puedan evaluar su desempeño. Para cumplir el objetivo principal se ha marcado diferentes subjetivos:
+El objetivo principal que sigue este proyecto es la integración en una aplicación web de un sistema de monitorización automática,
+en concreto en la plataforma web de robótica educativa
+Unibotics. Para cumplir el objetivo principal se ha marcado diferentes subjetivos:\\
 
-\begin{itemize}
-\item Capturar las diferentes interacciones de los usuarios como puede ser el tiempo que un usuario esta en la plataforma Unibotics. Esos datos recogidos son llamados sondas. Estas sondas serán capturadas en el servidor de Django que tiene Unibotics.
-
+\begin{enumerate}
+\item Capturar las diferentes interacciones de los usuarios, como puede ser el tiempo que un usuario esta en la plataforma Unibotics. Esos datos recogidos son llamados sondas. Estas sondas serán capturadas en el servidor de Django que tiene Unibotics.
 \item La grabación de las sondas en una base de datos.
+\item Creación de gráficas dinámicas automáticas a través de las sondas recogidas para poder realizar análisis. Se mostrarán en varias páginas web dentro de la plataforma. Por un lado en una página de acceso exclusivo a los administradores. Por otro lado los usuarios podrán acceder a otra página web donde ver un histórico de sus puntuaciones en cada ejercicio.
+\end{enumerate}
 
-\item Creación de gráficas dinámicas a través de las sondas recogidas para poder realizar análisis.
-\end{itemize}
-
-\newpage
-
- 
 \section{Metodología}
 
-La metodología seguida en este proyecto ha comenzado con la planificación de reuniones semanales con los tutores En estas reuniones semanales se hace un repaso de lo avanzado durante toda la semana y se fijan los nuevos objetivos para la semana siguiente. Estas reuniones han sido beneficiosas ya que permitía resolver las dudas más inmediatas y realizar un trabajo continuado. Gracias a la plataforma de Slack\footnote{https://slack.com/} se ha podido mantener la comunicación a lo largo de la semana y poder resolver dudas de una manera más dinámica. También en esta plataforma se encontraba un grupo con los administradores de Unibotics donde se soluciona los problemas relacionados con la plataforma.\\
+La metodología seguida en este proyecto ha comenzado con la planificación de reuniones semanales con los tutores. En estas reuniones semanales se hace un repaso de lo avanzado durante toda la semana y se fijan los nuevos objetivos para la semana siguiente. Estas reuniones han sido beneficiosas ya que permitía resolver las dudas más inmediatas y realizar un trabajo continuado. Gracias a la plataforma Slack\footnote{https://slack.com/} se ha podido mantener la comunicación a lo largo de la semana y poder resolver dudas de una manera más dinámica. También en esta plataforma se encontraba un grupo con los administradores de Unibotics donde se soluciona los problemas relacionados con la plataforma.\\
 
-Para poder hacer el seguimiento del trabajo se ha creado un blog\footnote{https://roboticslaburjc.github.io/2021-tfg-claudia-alvarez/}, donde periódicamente se han ido escribiendo los avances realizados.. El blog ha sido creado con \textit{Github-Pages}\footnote{https://pages.github.com/}\\
+Para poder hacer el seguimiento del trabajo se ha creado un blog\footnote{https://roboticslaburjc.github.io/2021-tfg-claudia-alvarez/}, donde periódicamente se han ido escribiendo los avances realizados. El blog ha sido creado con \textit{Github-Pages}\footnote{https://pages.github.com/}\\
 
-Para comenzar a realizar el TFG se ha realizado un primer estudio del código de Unibotics para poder entender el funcionamiento y así añadir el código de mejora. Cuando se ha fijado un objetivo semanal en el que hubiera que añadir código nuevo, lo primero se creaba una incidencia o \textit{isuue} describiendo el problema por lo que se creaba una nueva rama o \textit{branch} en la que se trabajaba en el código para no modificar el código original, una vez conseguido solucionar la incidencia se crea un parche o \textit{pull request} con la solución donde los administradores de la plataforma lo revisan y si esta todo bien fusionan la rama creada con la original, lo que se llama hacer un \textit{merge}.\\
+Para comenzar a realizar el TFG se ha realizado un primer estudio del código de Unibotics para poder entender el funcionamiento y así añadir el código de mejora. Cuando se ha fijado un objetivo semanal en el que hubiera que añadir código nuevo, lo primero se creaba una incidencia o \textit{issue} describiendo el problema por lo que se creaba una nueva rama o \textit{branch} en la que se trabajaba en el código para no modificar el código original, una vez conseguido solucionar la incidencia se crea un parche o \textit{pull request} con la solución donde los administradores de la plataforma lo revisan y si esta todo bien fusionan la rama creada con la original, lo que se llama hacer un \textit{merge}.\\
 
-Antes de la utilización de los componentes, como Elasticsearch o Dash,  para llevar a cabo este TFG se ha realizado un estudio previo de estos, para poder utilizarlos de una mejor manera. A medida que ha ido avanzando el TFG se ha decidido que sondas convendrían mejor para el monitoreado de la plataforma.
+Unibotics cuenta con tres despliegues: D1 para los desarrolladores, D2 en test para probar la plataforma antes de producción y D3 en producción en una nube de Amazon. En este proyecto se ha trabajado en el despliegue D1.\\
 
-\newpage
+Se ha seguido el modelo de desarrollo software en espiral basado en interacciones. En cada interacción primero se establece un objetivo, la siguiente etapa es el diseño, luego la implementación y por último la realización de pruebas.
+
+
 \section{Plan de Trabajo}
 El plan de trabajo consta de varias etapas:
 
-\begin{itemize}
-\item \textbf{Unibotics  y repaso de tecnologías web}: Estudio del código de Unibotics y repaso de las tecnologías web utilizadas en la plataforma.
-
-\item \textbf{Estudio de los componentes y herramientas utilizadas}: Estudio de los diferentes componentes utilizados empezando por Django, después se estudió la base de datos Elasticsearch y el visualizador Dash y por último la herramienta \textit{docker container} .
-
-\item \textbf{Primeros prototipos}: Se ha creado un primer prototipo de una aplicación de Django donde se recogía de manera simple diferentes sondas con Elasticsearch.
-
-\item \textbf{Recogida y captura de sondas}: Con Elasticsearch se recogen las diferentes sondas para el monitoreado de la plataforma, además se creo una base de datos de prueba para poder trabajar en local.
-\item \textbf{Visualización de las sondas}: Una vez definido que sondas se desean capturar, se crea la aplicación para poder visualizarlas y hacer el análisis.
-\item \textbf{Realización memoria}: Por último se ha escrito la memoria utilizando Latex\footnote{https://www.latex-project.org/}.
-\end{itemize}
-
-\section{Motivación}
-
-En los últimos años el uso de plataformas web educativa ha ido incrementándose y más en los tiempos de pandemia donde se ha tenido que cambiar la educación presencial por una \textit{online}. Por este modo cada vez más profesores buscan llamar la atención de sus alumnos a la hora de aprender y esto es lo que ocurre con la plataforma de Unibotics.\\
-
-Par que la plataforma pudiera funcionar de la mejor manera y más atrayente a los alumnos es necesario hacer ese monitoreado y posterior análisis, donde los administradores podrán ver como los usuarios interactúan con la plataforma y tomar decisiones a partir de los resultados.Los administradores, por lo tanto, podrán ver por ejemplo cuanto tiempo los alumnos tardan en resolver un ejercicio y que nota obtienen de ello, pudiendo hacer correlaciones entre los datos obtenidos.\\
-
-La monitorización y el análisis esta muy demandado en páginas web ya que esto te puede servir para formar una plataforma competitiva, como puede ser el caso de saber que sistema operativo utilizan los alumnos y añadir las mejoras para que se puedan realizar los ejercicios en esos sistemas operativos.\\
+\begin{enumerate}
+\item \textbf{Estudio de Unibotics}: Estudio del código fuente de Unibotics.
+\item \textbf{Estudio de los componentes y herramientas utilizadas}: Estudio de los diferentes componentes utilizados empezando por Django, después se estudió la base de datos Elasticsearch y el visualizador Dash y por último la herramienta de contenedores \textit{docker} .
+\item \textbf{Recogida y captura de sondas}: Con Elasticsearch se graban-almacenan las diferentes sondas para el monitoreado de la plataforma, además se creo una base de datos de prueba para poder trabajar en local. Incorporación de sondas que permiten recoger las principales interacciones de los usuarios con la plataforma web. Primero con un prototipo y luego sobre Unibotics.
+\item \textbf{Visualización automática de las sondas}: Una vez definido qué sondas se desean capturar, se crea la aplicación para visualizarlas y poder hacer el análisis.
+\item \textbf{Realización memoria}: Por último se ha escrito esta memoria utilizando Latex\footnote{https://www.latex-project.org/}.
+\end{enumerate}
 
 
 
