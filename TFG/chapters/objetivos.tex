@@ -14,9 +14,9 @@ en concreto en la plataforma web de robótica educativa
 Unibotics. Para cumplir el objetivo principal se ha marcado diferentes subjetivos:\\
 
 \begin{enumerate}
-\item Capturar las diferentes interacciones de los usuarios, como puede ser el tiempo que un usuario esta en la plataforma Unibotics. Esos datos recogidos son llamados sondas. Estas sondas serán capturadas en el servidor de Django que tiene Unibotics.
+\item Capturar las diferentes interacciones de los usuarios, como puede ser el tiempo que un usuario está en la plataforma Unibotics. Esos datos recogidos son llamados sondas. Estas sondas serán capturadas en el servidor de Django que tiene Unibotics.
 \item La grabación de las sondas en una base de datos.
-\item Creación de gráficas dinámicas automáticas a través de las sondas recogidas para poder realizar análisis. Se mostrarán en varias páginas web dentro de la plataforma. Por un lado en una página de acceso exclusivo a los administradores. Por otro lado los usuarios podrán acceder a otra página web donde ver un histórico de sus puntuaciones en cada ejercicio.
+\item Creación de gráficas dinámicas automáticas a través de las sondas recogidas para poder realizar análisis. Se mostrarán en varias páginas web dentro de la plataforma. Por un lado, en una página de acceso exclusivo a los administradores. Por otro lado, los usuarios podrán acceder a otra página web donde ver un histórico de sus puntuaciones en cada ejercicio.
 \end{enumerate}
 
 \section{Metodología}
@@ -29,7 +29,7 @@ Para comenzar a realizar el TFG se ha realizado un primer estudio del código de
 
 Unibotics cuenta con tres despliegues: D1 para los desarrolladores, D2 en test para probar la plataforma antes de producción y D3 en producción en una nube de Amazon. En este proyecto se ha trabajado en el despliegue D1.\\
 
-Se ha seguido el modelo de desarrollo software en espiral basado en interacciones. En cada interacción primero se establece un objetivo, la siguiente etapa es el diseño, luego la implementación y por último la realización de pruebas.
+Se ha seguido el modelo de desarrollo software en espiral basado en interacciones. En cada interacción primero se establece un objetivo, la siguiente etapa es el diseño, luego la implementación y por último, la realización de pruebas.
 
 
 \section{Plan de Trabajo}
@@ -38,9 +38,9 @@ El plan de trabajo consta de varias etapas:
 \begin{enumerate}
 \item \textbf{Estudio de Unibotics}: Estudio del código fuente de Unibotics.
 \item \textbf{Estudio de los componentes y herramientas utilizadas}: Estudio de los diferentes componentes utilizados empezando por Django, después se estudió la base de datos Elasticsearch y el visualizador Dash y por último la herramienta de contenedores \textit{docker} .
-\item \textbf{Recogida y captura de sondas}: Con Elasticsearch se graban-almacenan las diferentes sondas para el monitoreado de la plataforma, además se creo una base de datos de prueba para poder trabajar en local. Incorporación de sondas que permiten recoger las principales interacciones de los usuarios con la plataforma web. Primero con un prototipo y luego sobre Unibotics.
+\item \textbf{Recogida y captura de sondas}: Con Elasticsearch se graban-almacenan las diferentes sondas para el monitoreado de la plataforma, además se creó una base de datos de prueba para poder trabajar en local. Incorporación de sondas que permiten recoger las principales interacciones de los usuarios con la plataforma web. Primero con un prototipo y luego sobre Unibotics.
 \item \textbf{Visualización automática de las sondas}: Una vez definido qué sondas se desean capturar, se crea la aplicación para visualizarlas y poder hacer el análisis.
-\item \textbf{Realización memoria}: Por último se ha escrito esta memoria utilizando Latex\footnote{https://www.latex-project.org/}.
+\item \textbf{Realización memoria}: Por último, se ha escrito esta memoria utilizando Latex\footnote{https://www.latex-project.org/}.
 \end{enumerate}
 
 

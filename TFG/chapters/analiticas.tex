@@ -4,7 +4,7 @@ En este capítulo se explica la recogida de las sondas en Unibotics, su posterio
 \section{Recogida de sondas}
 La primera parte de este proceso ha consistido en la recogida de diferentes sondas. Para realizar esta tarea, se ha decidido utilizar la herramienta de Elasticsearch por las ventajas que ofrece explicadas en el capitulo 3.\\
 
-En este proyecto se ha utilizado docker, un contenedor a nivel de sistema operativo para Elasticsearch. Se ha utilizado Docker debido que permite que Elasticsearch funcione en cualquier sistema operativo, y replicar la instalación en cualquier máquina es directo. Primero hay que descargar la imagen de Elasticsearch con la versión deseada en este caso se ha utilizado la 7.12.0, el comando para descargar la imagen es:
+En este proyecto se ha utilizado Docker, un contenedor a nivel de sistema operativo para Elasticsearch. Se ha utilizado Docker debido que permite que Elasticsearch funcione en cualquier sistema operativo, y replicar la instalación en cualquier máquina es directo. Primero hay que descargar la imagen de Elasticsearch con la versión deseada en este caso se ha utilizado la 7.12.0, el comando para descargar la imagen es:
 {\footnotesize
 		\begin{verbatim}
 			docker pull docker.elastic.co/elasticsearch/elasticsearch:7.12.0
@@ -107,7 +107,7 @@ Cada ejercicio que se encuentra en Unibotics dispone de un botón de evaluación
 
 En este proceso de recogida de sondas y su grabación ha sido muy útil la utilización de la API que proporciona Elasticsearch para poder depurar y comprobar los datos que se estaban almacenando. Utilizando por ejemplo la URL \texttt{http://127.0.0.1:9200/session\_log/\_search/?size=10000&pretty} se comprueba las sondas de sessiones.\\
 
-Para comprobar el funcionamiento de Elasticsearch se generaron datos de prueba para poder comenzar a trabajar antes de tener los datos reales los cuales llevan tiempo recoger. La base de datos Elasticsearch dummy se ha creado gracias a las librerías de python Faker\footnote{https://faker.readthedocs.io/en/master/} y Tornado\footnote{https://www.tornadoweb.org/en/stable/} en ella se puede modificar las sondas como por ejemplo el número de sondas, de réplicas o de \textit{shards}. Esto ayudará a futuros desarrolladores a utilizar la base de datos de Elasticsearch. En la figura\ref{fig:dummy} se muestra como ejemplo el resultado de la sonda de evaluación de estilo de la base de datos de prueba.
+Para comprobar el funcionamiento de Elasticsearch se generaron datos de prueba para poder comenzar a trabajar antes de tener los datos reales los cuales llevan tiempo recoger. La base de datos Elasticsearch dummy se ha creado gracias a las librerías de Python Faker\footnote{https://faker.readthedocs.io/en/master/} y Tornado\footnote{https://www.tornadoweb.org/en/stable/} en ella se puede modificar las sondas como por ejemplo el número de sondas, de réplicas o de \textit{shards}. Esto ayudará a futuros desarrolladores a utilizar la base de datos de Elasticsearch. En la Figura\ref{fig:dummy} se muestra como ejemplo el resultado de la sonda de evaluación de estilo de la base de datos de prueba.
 
 
 \begin{figure}[H]
@@ -121,7 +121,7 @@ Para comprobar el funcionamiento de Elasticsearch se generaron datos de prueba p
 
 Dash es un \textit{framework} web que permite crear tableros web interactivos con visualizaciones dinámicas, para poder hacer análisis como se explica en el capítulo 3. En este Trabajo de fin de grado se ha decidió utilizar esta herramienta para la visualización de las sondas recogidas en Elasticsearch.\\
 
-Sólo los usuarios registrados en Unibotics podrán acceder a las visualizaciones y, dependiendo del tipo de usuario, tendrán disponibles unas visualizaciones u otras. Para iniciar sesión, se ha hecho uso de los usuarios ya guardados en la base de datos MYSQL de la que depende Django en la que se encuentra la información sobre el tipo de usuario (staff, admin, user...). En el caso de los administradores podrán ver la información de todas las sondas, mientras que un usuario de Unibotics solo podrá acceder a las puntuaciones de estilo y de eficacia obtenidas en cada ejercicio. En la figura \ref{fig:menu} muestra el menú disponible para los administradores.
+Sólo los usuarios registrados en Unibotics podrán acceder a las visualizaciones y, dependiendo del tipo de usuario, tendrán disponibles unas visualizaciones u otras. Para iniciar sesión, se ha hecho uso de los usuarios ya guardados en la base de datos MYSQL de la que depende Django en la que se encuentra la información sobre el tipo de usuario (staff, admin, user...). En el caso de los administradores podrán ver la información de todas las sondas, mientras que un usuario de Unibotics solo podrá acceder a las puntuaciones de estilo y de eficacia obtenidas en cada ejercicio. En la Figura \ref{fig:menu} muestra el menú disponible para los administradores.
 
 \begin{figure}[H]
     \centering
@@ -199,7 +199,7 @@ return fig
 
 En esta sección se detallan los resultados finales de las analíticas con datos reales de la plataforma de Unibotics, donde se muestran las diferentes gráficas creadas tanto para administradores como para los usuarios, así como una explicación de lo que representan.\\
 
-La primera gráfica creada se muestra en la figura \ref{fig:sesion} , donde se representa en el eje x el tiempo y en el eje y el número de sesiones, dando como resultado una gráfica de linea con énfasis en los puntos para una mejor visualización. Esta gráfica muestra el número de sesiones por día. La gráfica muestra que días ha habido más \textit{logings}, viéndose en este ejemplo como en los meses de verano dicho número se ha reducido.
+La primera gráfica creada se muestra en la Figura \ref{fig:sesion} , donde se representa en el eje x el tiempo y en el eje y el número de sesiones, dando como resultado una gráfica de linea con énfasis en los puntos para una mejor visualización. Esta gráfica muestra el número de sesiones por día. La gráfica muestra que días ha habido más \textit{logings}, viéndose en este ejemplo como en los meses de verano dicho número se ha reducido.
 
 
 
@@ -210,9 +210,9 @@ La primera gráfica creada se muestra en la figura \ref{fig:sesion} , donde se r
     \label{fig:sesion}
 \end{figure}
 \newpage
-En todas las gráficas de Dash si se pone el cursor sobre uno de los puntos se puede ver la información con mayor detalle, como se muestra en la figura \ref{fig:sesion}. Igualmente Dash añade varias opciones para interactuar con la gráfica, por ejemplo, se puede descargar la gráfica, hacer \textit{zoom} o seleccionar una parte de ella. \\
+En todas las gráficas de Dash si se pone el cursor sobre uno de los puntos se puede ver la información con mayor detalle, como se muestra en la Figura \ref{fig:sesion}. Igualmente Dash añade varias opciones para interactuar con la gráfica, por ejemplo, se puede descargar la gráfica, hacer \textit{zoom} o seleccionar una parte de ella. \\
 
-Se ha creado otra gráfica lineal de sesiones por día, pero en este caso solo se tiene en cuenta el número de sesiones por usuario único. La gráfica esta creada de la misma manera que la gráfica del total de sesiones por día y con los mismos filtros (fechas y usuarios). En la figura \ref{fig:sesion_users}  se muestra una parte ampliada de dicha gráfica.\\
+Se ha creado otra gráfica lineal de sesiones por día, pero en este caso solo se tiene en cuenta el número de sesiones por usuario único. La gráfica esta creada de la misma manera que la gráfica del total de sesiones por día y con los mismos filtros (fechas y usuarios). En la Figura \ref{fig:sesion_users}  se muestra una parte ampliada de dicha gráfica.\\
 
 \begin{figure}[H]
     \centering
@@ -221,7 +221,7 @@ Se ha creado otra gráfica lineal de sesiones por día, pero en este caso solo s
     \label{fig:sesion_users}
 \end{figure}
 \newpage
-La figura \ref{fig:time} muestra una gráfica de barras en la cual se representa el tiempo mediante el eje x y la duración total de la sesión de los usuarios en minutos en el eje y. Además, se ha incluido una media que representa la duración media de las sesiones. Aquí podemos comprobar que a veces la media coincide con la duración total debido a que solo ha tenido que haber una sesión en ese día.
+La Figura \ref{fig:time} muestra una gráfica de barras en la cual se representa el tiempo mediante el eje x y la duración total de la sesión de los usuarios en minutos en el eje y. Además, se ha incluido una media que representa la duración media de las sesiones. Aquí podemos comprobar que a veces la media coincide con la duración total debido a que solo ha tenido que haber una sesión en ese día.
 
 
 
@@ -231,7 +231,7 @@ La figura \ref{fig:time} muestra una gráfica de barras en la cual se representa
     \caption{Gráfico de tiempo en Unibotics}
     \label{fig:time}
 \end{figure}
-Esta gráfica se puede filtrar tanto por fechas como por usuarios, pudiendo ver el tiempo dedicado de un usuario y la media total del tiempo que usa Unibotics dicho usuario, como se puede ver en la figura \ref{fig:time_user}.
+Esta gráfica se puede filtrar tanto por fechas como por usuarios, pudiendo ver el tiempo dedicado de un usuario y la media total del tiempo que usa Unibotics dicho usuario, como se puede ver en la Figura \ref{fig:time_user}.
 
 \begin{figure}[H]
     \centering
@@ -239,7 +239,7 @@ Esta gráfica se puede filtrar tanto por fechas como por usuarios, pudiendo ver 
     \caption{Gráfico de tiempo en Unibotics de un usuario}
     \label{fig:time_user}
 \end{figure}
-A fin de poder hacer un análisis de la media, la desviación típica o la moda se ha creado un histograma de las duraciones de las sesiones como se ve en la figura \ref{fig:time_user}.
+A fin de poder hacer un análisis de la media, la desviación típica o la moda se ha creado un histograma de las duraciones de las sesiones como se ve en la Figura \ref{fig:time_user}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=16cm, keepaspectratio]{img/time_histogram.png}
@@ -247,7 +247,7 @@ A fin de poder hacer un análisis de la media, la desviación típica o la moda 
     \label{fig:time_histogram}
 \end{figure}
 \newpage
-La figura \ref{fig:browser} muestra una gráfica con los distintos navegadores que utilizan los usuarios para acceder a Unibotics,  en formato porcentaje. En este caso se ve que una gran parte de inicio de sesiones es a través del navegador de Chrome.
+La Figura \ref{fig:browser} muestra una gráfica con los distintos navegadores que utilizan los usuarios para acceder a Unibotics,  en formato porcentaje. En este caso se ve que una gran parte de inicio de sesiones es a través del navegador de Chrome.
 
 
 \begin{figure}[H]
@@ -257,7 +257,7 @@ La figura \ref{fig:browser} muestra una gráfica con los distintos navegadores q
     \label{fig:browser}
 \end{figure}
 \newpage
-Se ha creado una gráfica similar a la anterior para representar los Sistemas Operativos utilizados por los usuarios que acceden a Unibotics, como se puede ver en la figura \ref{fig:os}. Ambas gráficas tienen filtro por fechas.
+Se ha creado una gráfica similar a la anterior para representar los Sistemas Operativos utilizados por los usuarios que acceden a Unibotics, como se puede ver en la Figura \ref{fig:os}. Ambas gráficas tienen filtro por fechas.
 
 
 \begin{figure}[H]
@@ -267,7 +267,7 @@ Se ha creado una gráfica similar a la anterior para representar los Sistemas Op
     \label{fig:os}
 \end{figure}
 \newpage
-En la figura \ref{fig:mundo} se muestra un mapa geográfico con la localización de los usuarios que acceden a Unibotics. El tamaño de los puntos depende de la cantidad de sesiones, cuanto mayor sea el punto más sesiones hay. A la derecha se encuentra una leyenda con los países, se puede seleccionar uno o varios países en la leyenda para que solo se vean ellos en el mapa. Se puede filtrar por fechas.
+En la Figura \ref{fig:mundo} se muestra un mapa geográfico con la localización de los usuarios que acceden a Unibotics. El tamaño de los puntos depende de la cantidad de sesiones, cuanto mayor sea el punto más sesiones hay. A la derecha se encuentra una leyenda con los países, se puede seleccionar uno o varios países en la leyenda para que solo se vean ellos en el mapa. Se puede filtrar por fechas.
 
 
 
@@ -278,7 +278,7 @@ En la figura \ref{fig:mundo} se muestra un mapa geográfico con la localización
     \label{fig:mundo}
 \end{figure}
 \newpage
-En la siguiente gráfica que se ve en la figura \ref{fig:activity} representa un mapa de calor con la actividad de los usuarios. Esta dividido en cuadrados que representan cada día de un año, cuanto más intenso es el color verde más sesiones ha habido, ha medida que disminuyen las sesiones la intensidad también baja. A parte del filtrado por fechas. tiene un filtro por usuario para ver la actividad por usuarios únicos o grupo de ellos. Como ocurría con la gráfica lineal de sesiones, el primer mapa de color cuenta el total de las sesiones y el segundo mapa de color cuenta las sesiones únicas por usuario.
+En la siguiente gráfica que se ve en la Figura \ref{fig:activity} representa un mapa de calor con la actividad de los usuarios. Esta dividido en cuadrados que representan cada día de un año, cuanto más intenso es el color verde más sesiones ha habido, ha medida que disminuyen las sesiones la intensidad también baja. A parte del filtrado por fechas. tiene un filtro por usuario para ver la actividad por usuarios únicos o grupo de ellos. Como ocurría con la gráfica lineal de sesiones, el primer mapa de color cuenta el total de las sesiones y el segundo mapa de color cuenta las sesiones únicas por usuario.
 
 
 \begin{figure}[H]
@@ -289,7 +289,7 @@ En la siguiente gráfica que se ve en la figura \ref{fig:activity} representa un
 \end{figure}
 \newpage
 
-Los administradores tienen la opción de poder ver el número total de usuarios que son activos, el número de usuarios que han sido activos en los últimos 2 meses, en formato número. Además se muestra las gráficas de linea de registros por cada día, registros acumulados por días (figura \ref{fig:accumulated}) y usuarios activos en los últimos 2 meses.(figura \ref{fig:active}) Cada día se comprueba cuantos usuarios han iniciado sesión desde 2 meses atrás hasta ese día concretamente. Cada una de estas gráficas contiene su propio filtrado por fechas. 
+Los administradores tienen la opción de poder ver el número total de usuarios que son activos, el número de usuarios que han sido activos en los últimos 2 meses, en formato número. Además se muestra las gráficas de linea de registros por cada día, registros acumulados por días (Figura \ref{fig:accumulated}) y usuarios activos en los últimos 2 meses.(Figura \ref{fig:active}) Cada día se comprueba cuantos usuarios han iniciado sesión desde 2 meses atrás hasta ese día concretamente. Cada una de estas gráficas contiene su propio filtrado por fechas. 
 
 \begin{figure}[H]
     \centering
@@ -310,7 +310,7 @@ Los administradores tienen la opción de poder ver el número total de usuarios 
     \label{fig:active}
 \end{figure}
 \newpage
-Con el propósito de conocer el tiempo que invierten los usuarios en cada ejercicio se ha elaborado un histograma de las duraciones de los ejercicios. Esta gráfica dispone de un filtro del ejercicio que se desea comprobar, con el filtro de usuario y el de fechas. Por ejemplo, la figura \ref{fig:histogram_exercise} es un histograma del ejercicio \textit{follow\_line}  de un grupo de usuarios y unas fechas concretas.
+Con el propósito de conocer el tiempo que invierten los usuarios en cada ejercicio se ha elaborado un histograma de las duraciones de los ejercicios. Esta gráfica dispone de un filtro del ejercicio que se desea comprobar, con el filtro de usuario y el de fechas. Por ejemplo, la Figura \ref{fig:histogram_exercise} es un histograma del ejercicio \textit{follow\_line}  de un grupo de usuarios y unas fechas concretas.
 \begin{figure}[H]
     \centering
     \includegraphics[width=17cm, keepaspectratio]{img/histogram_exercise.png}
@@ -319,7 +319,7 @@ Con el propósito de conocer el tiempo que invierten los usuarios en cada ejerci
 \end{figure}
 \newpage
 
-Las siguientes gráficas son las puntuaciones de estilo y eficacia que podrán ser vistas tanto por los usuarios (que pueden acceder a sus puntuaciones) como por los administradores (que pueden acceder a las puntuaciones de todos los usuarios).  Actualmente las evaluaciones solo están disponibles en cuatro ejercicios representadas en una gráfica, en la que cada punto es una evaluación solicitada por el usuario. Las gráficas mostradas en las figuras \ref{fig:score} y \ref{fig:score_efficacy}  son un ejemplo de las notas de estilo y eficacia de un usuario de la base de datos de prueba en el ejercicio \textit{follow\_line}. Las gráficas de los demás ejercicios son iguales. como las de las puntuaciones de eficacia.
+Las siguientes gráficas son las puntuaciones de estilo y eficacia que podrán ser vistas tanto por los usuarios (que pueden acceder a sus puntuaciones) como por los administradores (que pueden acceder a las puntuaciones de todos los usuarios).  Actualmente las evaluaciones solo están disponibles en cuatro ejercicios representadas en una gráfica, en la que cada punto es una evaluación solicitada por el usuario. Las gráficas mostradas en las Figuras \ref{fig:score} y \ref{fig:score_efficacy}  son un ejemplo de las notas de estilo y eficacia de un usuario de la base de datos de prueba en el ejercicio \textit{follow\_line}. Las gráficas de los demás ejercicios son iguales. como las de las puntuaciones de eficacia.
 
 
 
