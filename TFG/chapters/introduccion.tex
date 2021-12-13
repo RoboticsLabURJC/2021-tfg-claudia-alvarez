@@ -1,6 +1,6 @@
 \chapter{Introducción}
 \label{chap:introduccion} 
-La forma de impartir conocimientos ha ido cambiando y evolucionando a lo largo de los años. Actualmente es difícil no encontrar un aula donde las tecnologías web están muy presentes y más en el ambiente universitario. Para poder implementar una plataforma web competitiva en el mercado y además atrayente al usuario es imprescindible no sólo proporcionar la funcionalidad apropiada cumpliendo siempre con los requisitos de usabilidad correspondientes, si no que también es necesario conocer como los usuarios utilizan la plataforma. Para ello, es imprescindible recoger la interactividad que el usuario tiene con la plataforma web, guardar esos datos y después visualizarlos.\\
+La forma de impartir conocimientos ha ido cambiando y evolucionando a lo largo de los años. Actualmente es difícil no encontrar un aula donde las tecnologías web están muy presentes y más en el ambiente universitario. Para poder implementar una plataforma web competitiva en el mercado y además atrayente al usuario es imprescindible no sólo proporcionar la funcionalidad apropiada cumpliendo siempre con los requisitos de usabilidad correspondientes, sino que también es necesario conocer como los usuarios utilizan la plataforma. Para ello, es imprescindible recoger la interactividad que el usuario tiene con la plataforma web, guardar esos datos y después visualizarlos.\\
 
 En este capítulo se va a hablar de los elementos clave en los que se basa este trabajo que son las tecnologías web, y la robótica educativa. También se introducirá en qué consiste un monitoreo y análisis de una página web.
 
@@ -8,7 +8,7 @@ En este capítulo se va a hablar de los elementos clave en los que se basa este 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tecnologías web}\label{motivacion}
-Las tecnologías de internet se remontan a 1970,  cuando el departamento el departamento de defensa de Estados Unidos creó una red descentralizada la cual pudiera aguantar ataques nucleares. En 1990, Tim Berners-Lee trabajador del CERN\footnote{Organización Europea para la Investigación Nuclear} originó un protocolo de comunicación basado en hipertextos (HTTP) donde científicos compartían documentos, gracias a eso Berners-Lee junto a su equipo desarrolló el lenguaje de marcado HTM\footnote{HyperText Markup Language} y el sistema de direcciones de web URL\footnote{Uniform Resource Locator}, ese mismo año creó la primera página web (Figura 1.1) dando inicio a la WWW\footnote{World Wide Web}. Al cabo de los años se fueron desarrollando los diferentes navegadores hasta los que se conocen hoy en día. \\
+Las tecnologías de internet se remontan a 1970, cuando el departamento el departamento de defensa de Estados Unidos creó una red descentralizada la cual pudiera aguantar ataques nucleares. En 1990, Tim Berners-Lee trabajador del CERN\footnote{Organización Europea para la Investigación Nuclear} originó un protocolo de comunicación basado en hipertextos (HTTP) donde científicos compartían documentos, gracias a eso Berners-Lee junto a su equipo desarrolló el lenguaje de marcado HTML\footnote{HyperText Markup Language} y el sistema de direcciones de web URL\footnote{Uniform Resource Locator}, ese mismo año creó la primera página web (Figura 1.1) dando inicio a la WWW\footnote{World Wide Web}. Al cabo de los años se fueron desarrollando los diferentes navegadores hasta los que se conocen hoy en día. \\
 
 \begin{figure}[H]
     \centering
@@ -41,19 +41,19 @@ Las tecnologías del lado del cliente suelen recibir el nombre de \textit{fronte
 Las tecnologías web del lado del servidor, también llamadas \textit{backend}, son las encargadas de procesar las peticiones del cliente y enviar una respuesta en forma de páginas HTML. Normalmente se utilizan \textit{frameworks }que son herramientas que te permiten desarrollar una aplicación web de forma ágil y sencilla a partir de librerías o funciones ya creadas. Algunos de estos \textit{frameworks} son:
 
 \begin{itemize}
-  \item \textbf{Django}: Basado en Python. Django hace uso de plantillas permitiendo hacer páginas web más rápidas y sencillas. Gracias a su ORM \footnote{Object Relational Mapping} no es necesario saberse el manejo de base de datos ya que este traduce directamente el código de Python al lenguaje estándar de las peticiones a bases de datos, SQL.
-  \item \textbf{Node.js}: Permite ejecutar código JavaScript fuera del navegador y está construido con el motor de JavaScript V8 de Chrome. Node.js utiliza un modelo de entrada y salida no bloqueante, no espera a que los procesos finalicen.
-  \item \textbf{Symfony}: Utiliza de lenguaje de programación PHP\footnote{Hypertext Preprocessor}. Está basado en el patrón Modelo Vista Controlador (MVC). Symfony es muy flexible permitiéndote instalar únicamente lo que se necesite en vez del \textit{framework} completo.
+\item \textbf{Django}: Basado en Python. Django hace uso de plantillas permitiendo hacer páginas web más rápidas y sencillas. Gracias a su ORM \footnote{Object Relational Mapping} no es necesario saberse el manejo de base de datos ya que este traduce directamente el código de Python al lenguaje estándar de las peticiones a bases de datos, SQL.
+\item \textbf{Node.js}: Permite ejecutar código JavaScript fuera del navegador y está construido con el motor de JavaScript V8 de Chrome. Node.js utiliza un modelo de entrada y salida no bloqueante, no espera a que los procesos finalicen.
+\item \textbf{Symfony}: Utiliza de lenguaje de programación PHP\footnote{Hypertext Preprocessor}. Está basado en el patrón Modelo Vista Controlador (MVC). Symfony es muy flexible permitiéndote instalar únicamente lo que se necesite en vez del \textit{framework} completo.
   \item \textbf{Spring Boot}: Desarrollado para aplicaciones programadas en Java, surgió debido a que el Spring Framework era difícil de configurar. 
-\item \textbf{Lavarel}: \textit{Framework} de PHP. En comparación con otros \textit{frameworks } de PHP su curva de aprendizaje es más baja. Es flexible y adaptable, no solamente debido al MVC sino que también propone utilizar \textit{routes with clousures}, a causa de lo cual reduce código \cite{lavarel}.
+\item \textbf{Lavarel}: \textit{Framework} de PHP. En comparación con otros \textit{frameworks } de PHP su curva de aprendizaje es más baja. Es flexible y adaptable, no solamente debido al MVC, sino que también propone utilizar \textit{routes with clousures}, a causa de lo cual reduce código \cite{lavarel}.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Plataforma web de programación}
-En la actualidad, gracias a Internet se tiene al alcance plataformas web donde se enseña a programar de una forma interactiva. Una de las ventajas de aprender programación en una plataforma web es que puedes hacer desde la comodidad de tu casa y una gran parte son gratuitas. Pueden ser utilizadas por usuarios de todos los niveles. A continuación se nombra algunos ejemplos de estas plataformas:\\
+En la actualidad, gracias a Internet se tiene al alcance plataformas web donde se enseña a programar de una forma interactiva. Una de las ventajas de aprender programación en una plataforma web es que puedes hacer desde la comodidad de tu casa y una gran parte son gratuitas. Pueden ser utilizadas por usuarios de todos los niveles. A continuación, se nombra algunos ejemplos de estas plataformas:\\
 \newpage
 \begin{itemize}
-\item \textbf{Scratch}\footnote{https://scratch.mit.edu/}: Es un entorno de programación desarrollado por el MIT\footnote{Massachusetts Institute of Technology}. Se puede descargar en local o se puede utilizar la plataforma de forma \textit{online}. Utiliza  un lenguaje de programación visual llamado igual que la plataforma, Scratch, el cual está basado en bloques permitiendo crear programas arrastrando y soltando para agrupar dichos bloques como un puzzle. Cada bloque puede significar un evento, movimiento, un operador o una variable, entre otras. Con esta plataforma, por ejemplo,  se pueden crear juegos, historias interactivas, música de manera sencilla y dinámica para el usuario. Las edades que tienen los usuarios que utilizan la plataforma esta entre los 8 y 16 años, aunque hay adultos que también la utilizan \cite{scratch}.
+\item \textbf{Scratch}\footnote{https://scratch.mit.edu/}: Es un entorno de programación desarrollado por el MIT\footnote{Massachusetts Institute of Technology}. Se puede descargar en local o se puede utilizar la plataforma de forma \textit{online}. Utiliza un lenguaje de programación visual llamado igual que la plataforma, Scratch, el cual está basado en bloques permitiendo crear programas arrastrando y soltando para agrupar dichos bloques como un puzle. Cada bloque puede significar un evento, movimiento, un operador o una variable, entre otras. Con esta plataforma, por ejemplo, se pueden crear juegos, historias interactivas, música de manera sencilla y dinámica para el usuario. Las edades que tienen los usuarios que utilizan la plataforma esta entre los 8 y 16 años, aunque hay adultos que también la utilizan \cite{scratch}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -65,7 +65,7 @@ En la actualidad, gracias a Internet se tiene al alcance plataformas web donde s
 
 \begin{itemize}
 \item \textbf{Snap!}\footnote{https://snap.berkeley.edu/}: Está basada en el código de programación de Scratch, creada en la Universidad de Berkeley. Esta aplicación la puedes utilizar tanto \textit{online} como descargándola y pudiendo utilizarla sin necesidad de Internet. La principal diferencia con Scratch es que te permite crear tus propios bloques utilizando JavaScript y así poder formar tu librería propia, también se puede crear listas avanzadas donde se puede almacenar cualquier tipo de dato incluso otras listas.  Esta aplicación web permite aprender a programar de una manera más visual y evitando los errores de sintaxis que se podrían cometer. Snap tiene una gran comunidad de usuarios que suben sus proyectos donde se puede aprender de ellos \cite{app}.
-\end{itemize}
+
 
 \begin{figure}[H]
     \centering
@@ -74,9 +74,8 @@ En la actualidad, gracias a Internet se tiene al alcance plataformas web donde s
     \label{fig:snap}
 \end{figure}
 
-\begin{itemize}
-\item \textbf{Robocode}\footnote{https://robocode.sourceforge.io/}: Es un videojuego multiplataforma que consiste en la creación de un tanque robot el cual tendrá que atacar y esquivar otros tanques para no ser destruido. No es necesario descargar ningún software adicional aparte del propio Robocode. Está dirigido para aprender Java y .NET. Nos podemos encontrar ligas donde las batallas de los robots transcurren en tiempo real, éstas están divididas en diferentes categorías dependiendo del tamaño de código efectivo en bytes para que sean competiciones más justas. Se puede programar las tres partes del tanque que son: el cuerpo que se encarga de mover el tanque, el radar que detecta a los adversarios y el cañón que se utiliza para apuntar y disparar. La aplicación dispone de un editor de texto, un \textit{debugger} y un compilador, todos los robots que se vayan desarrollando se podrán guardar para futuras batallas \cite{app}.
-\end{itemize}
+\item\textbf{Robocode}\footnote{https://robocode.sourceforge.io/}: Es un videojuego multiplataforma que consiste en la creación de un tanque robot el cual tendrá que atacar y esquivar otros tanques para no ser destruido. No es necesario descargar ningún software adicional aparte del propio Robocode. Está dirigido para aprender Java y .NET. Nos podemos encontrar ligas donde las batallas de los robots transcurren en tiempo real, éstas están divididas en diferentes categorías dependiendo del tamaño de código efectivo en bytes para que sean competiciones más justas. Se puede programar las tres partes del tanque que son: el cuerpo que se encarga de mover el tanque, el radar que detecta a los adversarios y el cañón que se utiliza para apuntar y disparar. La aplicación dispone de un editor de texto, un \textit{debugger} y un compilador, todos los robots que se vayan desarrollando se podrán guardar para futuras batallas \cite{app}.
+
 
 \begin{figure}[H]
     \centering
@@ -85,8 +84,8 @@ En la actualidad, gracias a Internet se tiene al alcance plataformas web donde s
     \label{fig:robocode}
 \end{figure}
 
-\begin{itemize}
-\item \textbf{CodeCombat}\footnote{ https://codecombat.com/} Es una página web donde a través de un personaje se enseña a programar en diferentes lenguajes como Python, JavaScript, C++, entre otros. El objetivo del juego es ir superando los diferentes niveles, los cuales van aumentando de dificultad. Está compuesto por 110 niveles gratuitos con opción de jugar más niveles si se paga, además pagando se pueden desbloquear diferentes héroes, aprender a programar juegos y páginas web\cite{app}.
+
+\item \textbf{CodeCombat}\footnote{ https://codecombat.com/}: Es una página web donde a través de un personaje se enseña a programar en diferentes lenguajes como Python, JavaScript, C++, entre otros. El objetivo del juego es ir superando los diferentes niveles, los cuales van aumentando de dificultad. Está compuesto por 110 niveles gratuitos con opción de jugar más niveles si se paga, además pagando se pueden desbloquear diferentes héroes, aprender a programar juegos y páginas web\cite{app}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -99,7 +98,7 @@ En la actualidad, gracias a Internet se tiene al alcance plataformas web donde s
 \section{Robótica y software de robot}
 La robótica es la ciencia o rama tecnológica encargada del estudio, diseño, creación y aplicación de los robots. En la actualidad existen muchas formas de estudiar robótica, puedes estudiarla tanto en universidades como en cursos. Existen diferentes herramientas para poder trabajar con robots, como los sistemas operativos robóticos. Se encuentran varios ejemplos de sistemas operativos como RoboComp\footnote{https://robocomp.github.io/web/} o Player\footnote{http://playerstage.sourceforge.net/}, pero el más conocido y usado es ROS\footnote{https://www.ros.org/} (\textit{Robot Operating System}).\\
 
-ROS  es un \textit{framework} flexible para escribir \textit{software} de robots. Las principales ventajas son que es de código abierto, contando con una comunidad global para mejorar el \textit{software}. Además es una herramienta multiplataforma e independiente de la administración del \textit{backend} y las interfaces de usuario \cite{ros}.\\
+ROS es un \textit{framework} flexible para escribir \textit{software} de robots. Las principales ventajas son que es de código abierto, contando con una comunidad global para mejorar el \textit{software}. Además, es una herramienta multiplataforma e independiente de la administración del \textit{backend} y las interfaces de usuario \cite{ros}.\\
 
 El funcionamiento de ROS está basado en nodos, éstos son procesos ejecutables que realizan una tarea simple. Las tareas de los nodos pueden ser controlar la velocidad, el motor de las ruedas o la localización. Los nodos pueden enviar mensajes o recibir mensajes de otros nodos a través de los tópicos. \\
 
@@ -145,7 +144,7 @@ Una parte de la robótica es la programación de estos robots por lo que se han 
 \end{itemize}
 \section{Unibotics}
 
-Unibotics\footnote{https://unibotics.org/} es una plataforma en línea de robótica educativa donde se desarrolla este Trabajo de Fin  de Grado, en la cual se enseña a programar de una manera llamativa y divertida para estudiantes universitarios. Unibotics proviene de otra plataforma que no está en línea, llamada Robotics Academy\footnote{http://jderobot.github.io/RoboticsAcademy/}. Ambas plataformas han sido creadas por la asociación de robótica e inteligencia artificial, JdeRobot.\\
+Unibotics\footnote{https://unibotics.org/} es una plataforma en línea de robótica educativa donde se desarrolla este Trabajo de Fin de Grado, en la cual se enseña a programar de una manera llamativa y divertida para estudiantes universitarios. Unibotics proviene de otra plataforma que no está en línea, llamada Robotics Academy\footnote{http://jderobot.github.io/RoboticsAcademy/}. Ambas plataformas han sido creadas por la asociación de robótica e inteligencia artificial, JdeRobot.\\
 
 
 La plataforma consta de varios ejercicios que se pueden dividir en ejercicios de \textbf{conducción autónoma} (\textit{Follow Line}, \textit{Obstacle avoidance}, \textit{Global Navigation}, \textit{Car Junction} y \textit{Autoparking}), \textbf{robots de servicios }(\textit{Vacuum Cleaner}, \textit{Localized Vacuum Cleaner} y \textit{Laser Mapping}), \textbf{drones} (\textit{Drone Cat and Mouse} y \textit{Rescue People}) y \textbf{visión artificial} (\textit{3D Reconstruction}, \textit{Color Filter}, \textit{OpticalFlow Teleop} y \textit{Montecarlo Visual Loc}).\\
@@ -162,7 +161,7 @@ En la Figura \ref{fig:infra} se muestra la infraestructura de la plataforma actu
 
 En los últimos 5 años se ha recibido ayuda de \textit{Google Summer of code}\footnote{https://summerofcode.withgoogle.com/archive/}, gracias a la cual se han ido añadiendo contenidos a la plataforma y también gracias a Trabajos de Fin de Grado.\\
 
-En la actualidad esta plataforma es utilizada en las asignaturas de Robótica móvil y Robótica de servicios en el grado de Ingeniería de Robótica Software  de la universidad Rey Juan Carlos y en el máster de visión artificial de la misma universidad.
+En la actualidad esta plataforma es utilizada en las asignaturas de Robótica móvil y Robótica de servicios en el grado de Ingeniería de Robótica Software de la universidad Rey Juan Carlos y en el máster de visión artificial de la misma universidad.
 
 \begin{figure}[H]
     \centering
@@ -173,7 +172,7 @@ En la actualidad esta plataforma es utilizada en las asignaturas de Robótica m�
 
 \section{Estructura del documento}
 
-Este Trabajo de Fin de Grado consta de de los siguientes capítulos:
+Este Trabajo de Fin de Grado consta de los siguientes capítulos:
 
 \begin{itemize}
     \item \textit{Capítulo 1 Introducción}: introducción a las tecnologías web, a páginas web educativas sobre robótica y Unibotics antes de la realización de este TFG.
