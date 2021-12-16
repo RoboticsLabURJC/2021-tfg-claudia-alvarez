@@ -146,7 +146,7 @@ Una parte de la robótica es la programación de estos robots por lo que se han 
 
 Unibotics\footnote{https://unibotics.org/} es una plataforma en línea de robótica educativa donde se desarrolla este Trabajo de Fin de Grado, en la cual se enseña a programar de una manera llamativa y divertida para estudiantes universitarios. Unibotics proviene de otra plataforma que no está en línea, llamada Robotics Academy\footnote{http://jderobot.github.io/RoboticsAcademy/}. Ambas plataformas han sido creadas por la asociación de robótica e inteligencia artificial, JdeRobot.\\
 
-
+\newpage
 La plataforma consta de varios ejercicios que se pueden dividir en ejercicios de \textbf{conducción autónoma} (\textit{Follow Line}, \textit{Obstacle avoidance}, \textit{Global Navigation}, \textit{Car Junction} y \textit{Autoparking}), \textbf{robots de servicios }(\textit{Vacuum Cleaner}, \textit{Localized Vacuum Cleaner} y \textit{Laser Mapping}), \textbf{drones} (\textit{Drone Cat and Mouse} y \textit{Rescue People}) y \textbf{visión artificial} (\textit{3D Reconstruction}, \textit{Color Filter}, \textit{OpticalFlow Teleop} y \textit{Montecarlo Visual Loc}).\\
 
 Se puede programar los ejercicios directamente desde la web sin la necesidad de instalar software adicional. En cada ejercicio, el usuario puede introducir código fuente, cargarlo en el cerebro de un robot simulado, ejecutarlo en simulación y visualizar el interfaz gráﬁco. Además, se puede subir o guardar el código realizado y comprobar la eficacia y el estilo del código. Se utiliza el lenguaje Python para poder realizar los ejercicios. Unibotics utiliza una imagen de Docker llamada RADI \footnote{https://hub.docker.com/r/jderobot/robotics-academy/}(\textit{Robots Academy Docker Image} donde están preinstaladas las dependencias y así no se tiene que descargar nada localmente. Está basada en ROS y Gazebo \cite{robotics}.\\
@@ -157,6 +157,7 @@ Se puede programar los ejercicios directamente desde la web sin la necesidad de 
     \caption{Infraestructura de Unibotics}
     \label{fig:infra}
 \end{figure}
+\newpage
 En la Figura \ref{fig:infra} se muestra la infraestructura de la plataforma actualmente. En la parte del servidor se encuentra un \textit{webserver}, el cual se conecta a base de datos como Elsaticsearch y MySQL, también se conecta al almacenamiento de la nube de Amazon S3 y una granja de 80 puestos. En la parte del cliente, a parte de la plataforma web se conecta a través de tres websocket al contenedor Docker, RADI. Esto hace que el coste computacional del simulador sea menor.\\
 
 En los últimos 5 años se ha recibido ayuda de \textit{Google Summer of code}\footnote{https://summerofcode.withgoogle.com/archive/}, gracias a la cual se han ido añadiendo contenidos a la plataforma y también gracias a Trabajos de Fin de Grado.\\
@@ -178,6 +179,6 @@ Este Trabajo de Fin de Grado consta de los siguientes capítulos:
     \item \textit{Capítulo 1 Introducción}: introducción a las tecnologías web, a páginas web educativas sobre robótica y Unibotics antes de la realización de este TFG.
     \item \textit{Capítulo 2 Objetivos y Metodología}: Descripción de los diferentes objetivos a cumplir en el TFG y la metodología seguida para la realización de estos.
     \item \textit{Capítulo 3 Herramientas utilizadas}: se describen las diferentes tecnologías web utilizadas en este trabajo y las herramientas usadas para la recogida y grabación de datos y la visualización de estadísticas automáticas.
-   \item \textit{Capítulo 4 Analíticas de Elasticsearch y Dash}: en este capítulo se expone el diseño y la implementación de la recogida de sondas y su posterior visualización en la plataforma de Unibotics.
+   \item \textit{Capítulo 4 Analíticas automáticas en Unibotics}: en este capítulo se expone el diseño y la implementación de la recogida de sondas y su posterior visualización en la plataforma de Unibotics.
   \item \textit{Capítulo 5 Conclusiones}: se desarrollan las conclusiones de los resultados obtenidos en este TFG, además de las competencias que se ha adquirido y futuros trabajos que se podrían realizar a partir de este.
    \end{itemize}
