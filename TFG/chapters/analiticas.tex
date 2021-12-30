@@ -7,14 +7,25 @@ Para conseguir las analíticas automáticas en Unibotics, se ha hecho un diseño
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=15cm, keepaspectratio]{img/grafico.png}
-    \caption{Arquitectura Unibotics con las nuevas tecnologías}
+    \includegraphics[width=10cm, keepaspectratio]{img/grafico.png}
+    \caption{Antigua arquitectura de Unibotics}
     \label{fig:grafico}
 \end{figure}
-En la Figura \ref{fig:grafico} se presenta la nueva arquitectura de Unibotics. Cuando un usuario interactúa con la plataforma de Unibotics, la herramienta de Elasticsearch recoge la información de éste. Las visualizaciones de las sondas recogidas se hacen a través de Dash, herramienta independiente a Django. Dash utiliza la base de datos de MySQL y Elasticsearch.\\
+
+En la Figura \ref{fig:grafico} se presenta la arquitectura de Unibotics. Como se describe en la sección 1.5, Unibotics esta formado por un \textit{frontend}, dónde se encuentra el cliente conectado a un contenedor RADI que tiene el simulador. La parte del \textit{backend}
+está compuesta por Django, el cual se conecta a la base de datos MySQL y a la nube de Amazon, S3.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm, keepaspectratio]{img/grafico2.png}
+    \caption{Arquitectura Unibotics con las nuevas tecnologías}
+    \label{fig:grafico2}
+\end{figure}
+La Figura \ref{fig:grafico2}  muestra como es la arquitectura de Unibotics, después de este TFG. En la parte del \textit{frontend}, se ha añadido la recogida de sondas con código JavaScript, al igual que las puntuaciones automáticas. Además está la web de analíticas dónde se ven las gráficas. Por otro lado, en el \textit{backend}, se ha añadido la base de datos Elasticsearch y la herramienta de Dash para las visualizaciones.\\
 
 Lo primero que hace un usuario cuando quiere entrar en la plataforma es registrarse en ella, guardando ese registro en la base de datos MySQL. Una vez registrado, podrá iniciar sesión en ella, en el momento que desee. Cuando se encuentre dentro de la plataforma, podrá elegir un ejercicio y acceder a él, dónde podrá programar la solución. Dentro de los ejercicios tienen la opción de pedir una evaluación automática de estilo y eficacia del código programado. Para abandonar la plataforma se puede cerrar sesión o de manera implícita, cerrando el navegador o la pestaña.\\
 
+Cuando un usuario interactúa con la plataforma de Unibotics, la herramienta de Elasticsearch recoge la información de éste. Las visualizaciones de las sondas recogidas se hacen a través de Dash, herramienta independiente a Django. Dash utiliza la base de datos de MySQL y Elasticsearch.\\
 \section{Recogida de sondas}
 La primera parte de este proceso ha consistido en la recogida de diferentes sondas. Para realizar esta tarea, se ha decidido utilizar la herramienta de Elasticsearch por las ventajas que ofrece explicadas en el capítulo 3.\\
 
