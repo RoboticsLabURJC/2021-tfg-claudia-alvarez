@@ -5,13 +5,15 @@
 	\section{Conclusiones finales} 
 	\label{sec:conclusiones_finales} 
 El objetivo principal de este TFG se ha cumplido, ya que se ha conseguido integrar con éxito analíticas automáticas en Unibotics. Desde la propia herramienta se detecta el tipo de usuario que accede, de tal manera que es posible controlar y mostrar una visualización u otra dependiendo de este tipo de usuario. Analizando los subjetivos, mencionados en el capítulo 2, llegamos a las siguientes conclusiones:\\
-\begin{itemize}
-\item  El subjetivo 1 se ha realizado con éxito. Se ha podido capturar y guardar las interacciones de los usuarios en la plataforma. Las sondas que se han recogido, han sido: el inicio y fin de sesión de un usuario, entrada y salida de los ejercicios y las evaluaciones de eficacia y estilo del código de cada ejercicio. A través de código JavaScript, las sondas se capturan en el \textit{frontend} y se envían al servidor, el cual se encarga de grabarlas en la base de datos.
-\newpage
-\item  El subjetivo 2 se han conseguido con la utilización de la herramienta de Elasticsearch. El servidor web de Django es el encargado de grabar las sondas en la base de datos de Elasticsearch. Para conseguir guardar las sondas, se han creado cuatro índices, los cuales se explican en la subsección.
 
-\item El subjetivo 3 se ha logrado con la integración de las visualizaciones de la información en el servidor web, gracias al entorno Dash. Ha permitido de una manera sencilla y potente la visualización de las sondas recogidas con Elasticserach. Estas gráficas representan una ventana de siete meses del uso de Unibotics de estudiantes reales. Ello ha permitido a los administradores comprender mejor el uso real de la plataforma. Se han añadido en varias gráficas el filtro de fecha y el filtro por usuario. Las primeras gráficas son las basadas en el número de registros y usuarios en la plataforma. Aquí, se encuentran tres gráficas lineales que representan los registros, los registros acumulados y los usuarios activos, cada día. El siguiente bloque de gráficas enseña la actividad en la plataforma. En él, se encuentran las gráficas de sesiones por día, tanto totales como por usuario único. Estas gráficas se pueden encontrar en formato lineal o en mapa de calor, como se describe en la subsección. También, está la gráfica del tiempo total empleado en la plataforma cada día y su histograma. Para ver la actividad en cada ejercicio, se ha creado un histograma de las duraciones en ellos, con los filtros mencionados en la subsección.  Y por último, la visualización de los metadatos, donde se hallan el sistema operativo y navegador que utilizan los usuarios para acceder a la plataforma.
-\end{itemize}
+ El subjetivo 1 se ha realizado con éxito. Se ha podido capturar y guardar las interacciones de los usuarios en la plataforma. Las sondas que se han recogido, han sido: el inicio y fin de sesión de un usuario, entrada y salida de los ejercicios y las evaluaciones de eficacia y estilo del código de cada ejercicio. A través de código JavaScript, las sondas se capturan en el \textit{frontend} y se envían al servidor, el cual se encarga de grabarlas en la base de datos.
+\newpage
+El subjetivo 2 se han conseguido con la utilización de la herramienta de Elasticsearch. El servidor web de Django es el encargado de grabar las sondas en la base de datos de Elasticsearch. Para conseguir guardar las sondas, se han creado cuatro índices, los cuales se explican en la subsección 4.2.2.\\
+
+El subjetivo 3 se ha logrado con la integración de las visualizaciones de la información en el servidor web, gracias al entorno Dash. Ha permitido de una manera sencilla y potente la visualización de las sondas recogidas con Elasticsearch. Estas gráficas representan el uso de Unibotics de estudiantes reales desde mayo del 2021. Ello ha permitido a los administradores comprender mejor el uso real de la plataforma.\\
+
+Se han añadido en varias gráficas el filtro de fecha y el filtro por usuario. Las primeras gráficas son las basadas en el número de registros y usuarios en la plataforma. Aquí, se encuentran tres gráficas lineales que representan los registros, los registros acumulados y los usuarios activos, cada día. El siguiente bloque de gráficas enseña la actividad en la plataforma. En él, se encuentran las gráficas de sesiones por día, tanto totales como por usuario único. Estas gráficas se pueden encontrar en formato lineal o en mapa de calor, como se describe en la subsección 4.3.2. También, está la gráfica del tiempo total empleado en la plataforma cada día y su histograma. Para ver la actividad en cada ejercicio, se ha creado un histograma de las duraciones en ellos, con los filtros mencionados en la subsección 4.3.1.  Por último, la visualización de los metadatos, donde se halla la ubicación de los usuarios, el sistema operativo y navegador que utilizan para acceder a la plataforma.
+
 
 	\section{Competencias adquiridas} 
 	\label{sec:competencias_adquiridas} 
@@ -19,7 +21,7 @@ El objetivo principal de este TFG se ha cumplido, ya que se ha conseguido integr
 		
 		\begin{itemize}
 			\item Ampliado mis conocimientos sobre las tecnologías web, tanto el entorno de Django como HTML, CSS y JavaScript.
-			
+			\newpage
 			\item Conocer cómo funciona una base de datos en un proyecto real, en el caso de MySQL, y saber desplegar e integrar una nueva base de datos no relacional, Elasticsearch. Comprender la importancia de la información para monitorizar un servicio web. 
 			
 			\item Entender las tecnologías de visualizaciones automáticas de la información gracias a Dash, la cual es una herramienta rápida y eficiente.
