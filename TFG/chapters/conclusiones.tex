@@ -1,18 +1,22 @@
 \chapter{Conclusiones y trabajos futuros}\label{conclusión}
 
-	En este último capítulo se detallan las conclusiones alcanzadas, así como las competencias adquiridas al realizar este TFG y los futuros trabajos que pueden extender la plataforma y las contribuciones actuales.
+	En este último capítulo se detallan las principales conclusiones alcanzadas, así como las competencias adquiridas al realizar este TFG y los futuros trabajos que pueden extender la plataforma y las contribuciones actuales.
 	
 	\section{Conclusiones finales} 
 	\label{sec:conclusiones_finales} 
-El objetivo principal de este TFG se ha cumplido, ya que se ha conseguido integrar con éxito analíticas automáticas en Unibotics. Desde la propia herramienta se detecta el tipo de usuario que accede, de tal manera que es posible controlar y mostrar una visualización u otra dependiendo de este tipo de usuario. Analizando los subjetivos, mencionados en el capítulo 2, llegamos a las siguientes conclusiones:\\
+El objetivo principal de este TFG se ha cumplido, ya que se ha conseguido integrar con éxito analíticas automáticas en Unibotics. Desde la propia herramienta se detecta el tipo de usuario que accede, de tal manera que es posible controlar y mostrar una visualización u otra dependiendo de este tipo de usuario. Analizando los subjetivos mencionados en el capítulo 2, llegamos a las siguientes conclusiones:\\
 
- El subjetivo 1 se ha realizado con éxito. Se ha podido capturar y guardar las interacciones de los usuarios en la plataforma. Las sondas que se han recogido, han sido: el inicio y fin de sesión de un usuario, entrada y salida de los ejercicios y las evaluaciones de eficacia y estilo del código de cada ejercicio. A través de código JavaScript, las sondas se capturan en el \textit{frontend} y se envían al servidor, el cual se encarga de grabarlas en la base de datos.
+ El subjetivo 1 se ha alcanzado con éxito. Se ha podido capturar y guardar las interacciones de los usuarios en la plataforma. Las sondas que se han recogido han sido: el inicio y fin de sesión de un usuario, entrada y salida de los ejercicios y las evaluaciones de eficacia y estilo del código de cada ejercicio. A través de código JavaScript, las sondas se capturan en el \textit{frontend} y se envían al servidor, el cual se encarga de grabarlas en la base de datos.
 \newpage
-El subjetivo 2 se han conseguido con la utilización de la herramienta de Elasticsearch. El servidor web de Django es el encargado de grabar las sondas en la base de datos de Elasticsearch. Para conseguir guardar las sondas, se han creado cuatro índices, los cuales se explican en la subsección 4.2.2.\\
+El subjetivo 2 se ha conseguido con la utilización de la herramienta Elasticsearch. El servidor web de Django es el encargado de grabar las sondas en la base de datos no relacional de Elasticsearch. Para guardar las sondas se han creado previamente cuatro índices, los cuales se explican en la subsección 4.2.2.\\
 
-El subjetivo 3 se ha logrado con la integración de las visualizaciones de la información en el servidor web, gracias al entorno Dash. Ha permitido de una manera sencilla y potente la visualización de las sondas recogidas con Elasticsearch. Estas gráficas representan el uso de Unibotics de estudiantes reales desde mayo del 2021. Ello ha permitido a los administradores comprender mejor el uso real de la plataforma.\\
+El subjetivo 3 se ha logrado con la integración de las visualizaciones de la información en el servidor web gracias al entorno Dash. Ha permitido de una manera sencilla y potente la visualización de las sondas recogidas en Elasticsearch. Estas gráficas representan el uso de Unibotics de estudiantes reales desde mayo del 2021. Ello ha permitido a los administradores comprender mejor el uso real de la plataforma por parte de los estudiantes.\\
 
-Se han añadido en varias gráficas el filtro de fecha y el filtro por usuario. Las primeras gráficas son las basadas en el número de registros y usuarios en la plataforma. Aquí, se encuentran tres gráficas lineales que representan los registros, los registros acumulados y los usuarios activos, cada día. El siguiente bloque de gráficas enseña la actividad en la plataforma. En él, se encuentran las gráficas de sesiones por día, tanto totales como por usuario único. Estas gráficas se pueden encontrar en formato lineal o en mapa de calor, como se describe en la subsección 4.3.2. También, está la gráfica del tiempo total empleado en la plataforma cada día y su histograma. Para ver la actividad en cada ejercicio, se ha creado un histograma de las duraciones en ellos, con los filtros mencionados en la subsección 4.3.1.  Por último, la visualización de los metadatos, donde se halla la ubicación de los usuarios, el sistema operativo y navegador que utilizan para acceder a la plataforma.
+Se han añadido en varias gráficas el filtro de fechas y el filtro por usuario. Las primeras gráficas son las basadas en el número de registros y usuarios en la plataforma. Aquí se encuentran tres gráficas lineales que representan los registros, los registros acumulados y los usuarios activos cada día. \\
+
+El siguiente bloque de gráficas enseña la actividad en la plataforma. En él se encuentran las gráficas de sesiones por día, tanto totales como por usuario único. Estas gráficas se pueden encontrar en formato lineal o en mapa de calor, como se describe en la subsección 4.3.2. También está la gráfica del tiempo total empleado en la plataforma cada día y su histograma. Para ver la actividad en cada ejercicio, se ha creado un histograma de las duraciones en ellos, con los filtros mencionados en la subsección 4.3.1.  \\
+
+Por último, la visualización de los metadatos, donde se halla la ubicación geográfica de los usuarios, el sistema operativo y navegador que utilizan para acceder a la plataforma.
 
 
 	\section{Competencias adquiridas} 
@@ -22,21 +26,21 @@ Se han añadido en varias gráficas el filtro de fecha y el filtro por usuario. 
 		\begin{itemize}
 			\item Ampliado mis conocimientos sobre las tecnologías web, tanto el entorno de Django como HTML, CSS y JavaScript.
 			\newpage
-			\item Conocer cómo funciona una base de datos en un proyecto real, en el caso de MySQL, y saber desplegar e integrar una nueva base de datos no relacional, Elasticsearch. Comprender la importancia de la información para monitorizar un servicio web. 
+			\item Conocer cómo funciona una base de datos relacional en un proyecto real, en el caso de MySQL, y saber desplegar e integrar una nueva base de datos no relacional, Elasticsearch. Comprender la importancia de la información para monitorizar un servicio web. 
 			
 			\item Entender las tecnologías de visualizaciones automáticas de la información gracias a Dash, la cual es una herramienta rápida y eficiente.
 			
 			\item Aprender a utilizar GitHub como repositorio donde desarrollar proyectos en equipo, haciendo uso de incidencias y parches. 
 			
-			\item Trabajar en una plataforma que está en continuo desarrollo, donde se han creado nuevas funcionalidades. Trabajar en equipo con otros desarrolladores de áreas diferentes a la trabajada en este proyecto.			
+			\item Trabajar en una plataforma que está en continuo desarrollo, donde se han creado nuevas funcionalidades. Trabajar en equipo con otros desarrolladores de áreas diferentes a la mejorada en este proyecto.			
 		\end{itemize}
 	\section{Trabajos futuros} 
 	\label{sec:trabajos_futuros} 
 
-		En esta sección se proponen futuras líneas de trabajo para mejorar las analíticas automáticas:
+		En esta sección se proponen algunas futuras líneas para mejorar las analíticas automáticas:
 
 		\begin{itemize}
 \item Enriquecer las sondas que se encuentran en Unibotics añadiendo nuevas o añadiendo nuevos campos a los índices creados para recabar más información sobre el uso de la plataforma. Actualmente las sondas de puntuación de estilo y de eficacia solo se encuentran en cuatro ejercicios, así que se podrían añadir a los nuevos ejercicios que sean creados. Para recoger nuevas sondas será necesario la creación de nuevos índices en Elasticsearch y nuevas visualizaciones automáticas en la aplicación de Dash.
-\item Incorporar a Elasticsearch medidas de rendimiento en el servidor web. El servidor está desplegado en \textit{Amazon Web Services} en producción por lo que se pueden añadir métricas de memoria ocupada o CPU consumida, entre otras. Luego se podrá correlar esas métricas con las sondas actuales, tales como el número de usuarios activos en la plataforma.
-\item En este TFG se ha visualizado las sondas con los datos directamente recogidos, el siguiente paso que se podría hacer es correlacionar varias de las sondas recogidas y así enriquecer el conocimiento sobre el uso real que los estudiantes hacen de la plataforma y sobre los procesos de aprendizaje. Por ejemplo, saber si el tiempo en el que realizan un ejercicio afecta la nota obtenida en el ejercicio. Esto nos permite hacer análisis estadísticos o investigaciones científicas, como el efecto de la \textit{gamificación} en los procesos de aprendizaje.\\
+\item Incorporar a Elasticsearch medidas de rendimiento en el propio servidor web en producción. El servidor está desplegado en \textit{Amazon Web Services} en producción por lo que se pueden añadir métricas de memoria ocupada o CPU consumida, entre otras. Luego se podrá correlar esas métricas con las sondas actuales, tales como el número de usuarios activos en la plataforma.
+\item En este TFG se han visualizado las sondas con los datos directamente recogidos, el siguiente paso que se podría hacer es correlacionar varias de las sondas recogidas y así enriquecer el conocimiento sobre el uso real que los estudiantes hacen de la plataforma y sobre sus procesos de aprendizaje. Por ejemplo, saber si el tiempo que dedican en realizar un ejercicio afecta a la nota obtenida en el ejercicio. Esto nos permite hacer análisis estadísticos o investigaciones científicas, como el efecto de la \textit{gamificación} en los procesos de aprendizaje.\\
 		\end{itemize}
