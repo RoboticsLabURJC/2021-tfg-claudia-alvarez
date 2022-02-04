@@ -12,7 +12,7 @@ Para conseguir las analíticas automáticas en Unibotics, se han diseñado vario
     \label{fig:grafico}
 \end{figure}
 
-En la Figura \ref{fig:grafico} se presenta la arquitectura de Unibotics previa a este Trabajo de Fin de Grado. Como se describe en la sección 1.5, Unibotics está formado por un \textit{frontend}, donde se encuentra el cliente conectado a un contenedor RADI que tiene el simulador. La parte del \textit{backend} está compuesta por Django, el cual se conecta a la base de datos MySQL y a la nube de Amazon, S3.
+En la Figura \ref{fig:grafico} se presenta la arquitectura de Unibotics previa a este Trabajo de Fin de Grado. Como se describe en la sección 1.5, Unibotics está formado por un \textit{frontend}, donde interactúa el cliente conectado a un contenedor RADI que tiene el simulador robótico. La parte del \textit{backend} está compuesta por Django, el cual se conecta a la base de datos MySQL y a la nube de Amazon, S3.
 
 \begin{figure}[H]
     \centering
@@ -22,23 +22,23 @@ En la Figura \ref{fig:grafico} se presenta la arquitectura de Unibotics previa a
 \end{figure}
 La Figura \ref{fig:grafico2} muestra cómo es la arquitectura nueva de Unibotics después de este TFG. En la parte del \textit{frontend} se ha añadido la recogida de sondas con código JavaScript, al igual que las puntuaciones automáticas obtenidas por los estudiantes en algunos ejercicios. Además, está la página web de analíticas dónde se ven las gráficas. Por otro lado, en el \textit{backend} se ha añadido la base de datos Elasticsearch y la herramienta de Dash para generar esas visualizaciones.\\
 
-Lo primero que hace un usuario cuando quiere entrar en la plataforma es registrarse en ella, guardando ese registro en la base de datos MySQL. Una vez registrado, podrá iniciar sesión en ella, en el momento que desee. Cuando se encuentre dentro de la plataforma, podrá elegir un ejercicio y acceder a él, dónde podrá programar la solución correspondiente. Dentro de los ejercicios algunos tienen la opción de pedir una evaluación automática de estilo y eficacia del código programado. Para abandonar la plataforma se puede cerrar sesión explícitamente o de manera implícita, cerrando el navegador o la pestaña.\\
+Lo primero que hace un usuario cuando quiere entrar en la plataforma es registrarse en ella, guardando ese registro en la base de datos MySQL. Una vez registrado, podrá iniciar sesión en ella, en el momento que desee. Cuando se encuentre dentro de la plataforma, podrá elegir un ejercicio y acceder a él, dónde podrá programar la solución correspondiente. Dentro de los ejercicios algunos tienen la opción de pedir una evaluación automática de estilo y de eficacia del código programado. Para abandonar la plataforma se puede cerrar sesión explícitamente o de manera implícita, cerrando el navegador o la pestaña.\\
 
-Cuando un usuario interactúa con la plataforma de Unibotics, la herramienta de Elasticsearch recoge la información de estas interacciones, entrada y salida en la plataforma, en algún ejercicio, puntuaciones automáticas, etc. Las visualizaciones de las sondas recogidas se hacen a través de Dash, herramienta independiente a Django. Dash utiliza la base de datos de MySQL y la base de datos no relacional Elasticsearch.
+Cuando un usuario interactúa con la plataforma de Unibotics, la herramienta de Elasticsearch recoge la información de estas interacciones, entrada y salida en la plataforma, entrada y salida de los ejercicios, puntuaciones automáticas, etc. Las visualizaciones de las sondas recogidas se hacen a través de Dash, herramienta independiente a Django. Dash utiliza la base de datos de MySQL y la base de datos no relacional Elasticsearch.
 \section{Recogida de sondas}
-La primera parte de este proceso ha consistido en la programación de la recogida de diferentes sondas, detectándolas a través de código JavaScript. Una vez detectado la sonda es enviada al \textit{webserver}, el cual es el encargado de guardar la sonda en la base de datos, de modo persistente. Para realizar esta tarea, se ha decidido utilizar la base de datos Elasticsearch por las ventajas que ofrece, explicada en el capítulo 3.
+La primera parte de este proceso ha consistido en la programación del \textit{software} que recoge de diferentes sondas, detectándolas a través de código JavaScript. Una vez detectada la sonda es enviada al \textit{webserver}, el cual es el encargado de guardar la sonda en la base de datos, de modo persistente. Para realizar esta tarea, se ha decidido utilizar la base de datos Elasticsearch por las ventajas que ofrece, explicada en el capítulo 3.
 
 \subsection{Tipos de sondas}
 Las sondas, como ya se ha mencionado anteriormente, son los eventos interesantes que se quieren recoger. Este proyecto consta de cuatro tipos de sondas:
 \begin{enumerate}
-\item Entrada y salida de un usuario a la plataforma de Unibotics. Es útil para saber la duración de una sesión, de dónde procede cada usuario, qué sistema operativo utiliza y desde qué navegador entra a la plataforma.
+\item Entrada y salida de un usuario a la plataforma de Unibotics. Es útil para saber la duración de una sesión, desde dónde accede cada usuario, qué sistema operativo utiliza y desde qué navegador entra a la plataforma.
 \item Entrada y salida de un usuario a cada ejercicio que hay en la plataforma. Su principal utilidad es saber durante cuánto tiempo un usuario está realizando un ejercicio en concreto.
 \item Puntuación automática de estilo que tiene el código fuente de un usuario para un ejercicio.
 \item Puntuación automática de eficacia del código fuente de un usuario para un ejercicio.
 \end{enumerate}
 \newpage
 \subsection{Base de datos de eventos interesantes}
-Para definir y configurar los índices donde se guardarán las sondas, se ha creado un nuevo archivo, llamado \texttt{probe.py}. Al definir un índice, se determinan los nombres de cada campo (información que se quiere almacenar) y el tipo de campo que es, por ejemplo: un texto, un número, una fecha, entre otros. También se puede configurar el índice, por ejemplo, poniendo el número de\textit{ shards }o el número de réplicas. Un ejemplo de la definición de un índice sería este: \\
+Para definir y configurar los índices donde se guarda las sondas se ha creado un nuevo archivo, llamado \texttt{probe.py}. Al definir un índice, se determinan los nombres de cada campo (información que se quiere almacenar) y el tipo de campo que es, por ejemplo: un texto, un número, una fecha, entre otros. También se puede configurar el índice, por ejemplo, poniendo el número de\textit{ shards }o el número de réplicas. Un ejemplo de la definición de un índice sería este: \\
 
 \begin{lstlisting}
    from django_elasticsearch_dsl import Document, Date, Text, Double
@@ -72,7 +72,7 @@ Para este trabajo se han definido cuatro índices diferentes:
 \item \texttt{efficacy\_log}: índice que recoge los datos sobre la evaluación de la eficacia del código de los ejercicios que introducen los estudiantes. Los campos son iguales que en el índice de \texttt{style\_log}.
 \end{itemize}
 \subsection{Detección de las sondas}
-Las sondas se han detectado en el navegador we, en el \textit{frontend} con código JavaScript. La sonda número 1 de la subsección 4.2.1 ha sido capturada haciendo uso de la solicitud que se manda al \textit{webserver }al hacer \textit{login}. Cuando un usuario introduce su \textit{username}, su contraseña y clica en el botón de \textit{login}, se detecta la entrada del usuario. \\
+Las sondas se han detectado en el navegador web, en el \textit{frontend} con código JavaScript. La sonda número 1 de la subsección 4.2.1 ha sido capturada haciendo uso de la solicitud que se manda al \textit{webserver }al hacer \textit{login}. Cuando un usuario introduce su \textit{username}, su contraseña y clica en el botón de \textit{login}, se detecta la entrada del usuario. \\
 
 Un usuario puede abandonar Unibotics de manera explícita, utilizando el botón de \textit{logout}, o de manera implícita, por inactividad. Cuando la salida es explícita se detecta en el mismo instante que clica en \textit{logout}.  Si no se detecta alguna pulsación del teclado o algún clic del ratón en la plataforma, durante un \textit{timeout} declarado de 30 minutos, se considerará que el usuario es inactivo. Pasado el \textit{timeout}, se detectará como salida del usuario.\\
 
@@ -111,10 +111,10 @@ window.addEventListener("DOMContentLoaded", function (e) {
 });
 \end{lstlisting} 
 
-Para detectar la puntuación recibida en la evaluación de eficacia se ha creado un nuevo botón en los ejercicios. Una vez pulsado el botón, empieza a ejecutar el código durante un tiempo determinado, según el ejercicio. Pasado ese tiempo se envía la nota obtenida del ejercicio al \textit{webserver}. Si el usuario pulsa una segunda vez a ese botón antes de que pase el tiempo de medición se considera que el usuario no desea la evaluación automática, por lo cual la sonda no se grabará. En la plataforma, ya constaba un botón de evaluación de estilo, el cual envía al \textit{webserver} el código fuente del ejercicio.
+Para detectar la puntuación recibida en la evaluación de eficacia se ha creado un nuevo botón en los ejercicios. Una vez pulsado el botón, empieza a ejecutar el código durante un tiempo determinado, según el ejercicio. Pasado ese tiempo se envía la nota obtenida del ejercicio al \textit{webserver}. Si el usuario pulsa una segunda vez a ese botón antes de que pase el tiempo de medición se considera que el usuario desiste y no desea la evaluación automática, por lo cual la sonda no se grabará. En la plataforma ya constaba un botón de evaluación de estilo, el cual envía al \textit{webserver} el código fuente del ejercicio.
 
 \subsection{Procesamiento y grabación de las sondas}
-Una vez definidos en código fuente los diferentes índices, se importan al archivo \texttt{views.py} para poder crearlos. Las sesiones de los usuarios se guardan en el índice \texttt{session\_log}. A través de las sondas creadas, se recoge cuándo el usuario entra en la plataforma y cuándo finaliza su actividad en ella. Se recoge la sonda de la siguiente manera:
+Una vez definidos en código fuente los diferentes índices, se importan en el archivo \texttt{views.py} para poder crearlos. Las sesiones de los usuarios se guardan en el índice \texttt{session\_log}. A través de las sondas creadas, se recoge cuándo el usuario entra en la plataforma y cuándo finaliza su actividad en ella. Se recoge la sonda de la siguiente manera:
 \\
 \begin{lstlisting}
 probe_session = SessionDocument(username=username,start_date=datetime.now(),
@@ -127,7 +127,7 @@ probe_session = SessionDocument(username=username,start_date=datetime.now(),
 probe_session.save()
 \end{lstlisting}
 
-Gracias al objeto \textit{HTTP Request} que recibe el fichero \texttt{views.py}, se obtiene la información del nombre del usuario, la IP y el \textit{user-agent}. En el \textit{user-agent} se encuentra el sistema operativo, el navegador o el dispositivo que utiliza el usuario para acceder a la web de Unibotics. Para la localización espacial se ha creado una función que, a partir de la IP, muestra la ubicación geográfica. Cuando el usuario entra, los campos de fin de sesión y duración se inicializan con la fecha actual y 0 respectivamente, una vez que el usuario haga \textit{logout} o finalice su sesión por inactividad estos campos se modificarán como se muestra a continuación:\\
+Gracias al objeto \textit{HTTP Request} que recibe el fichero \texttt{views.py}, se obtiene la información del nombre del usuario, la IP y el \textit{user-agent}. En el \textit{user-agent} se encuentra el sistema operativo, el navegador o el dispositivo que utiliza el usuario para acceder a la web de Unibotics. Para la localización espacial se ha creado una función que, a partir de la IP, muestra la ubicación geográfica. Cuando el usuario entra, los campos de fin de sesión y duración se inicializan con la fecha actual y 0 respectivamente. Una vez que el usuario haga \textit{logout} o finalice su sesión por inactividad estos campos se modificarán como se muestra a continuación:\\
 
 \begin{lstlisting}
 s = Search(index="session_log").query('match',username=request.user.username) \
@@ -141,7 +141,7 @@ for hit in s:
                  .total_seconds()}})
 \end{lstlisting}
 
-Realizar los cálculos de la duración y la posición del usuario evita que a la hora de visualizarse se tengan que hacer dichos cálculos de todos los datos al mismo tiempo, ahorrando tiempo.\\
+Realizar los cálculos de la duración y la posición del usuario evita que a la hora de visualizarse se tengan que hacer dichos cálculos de todos los datos, ahorrando tiempo.\\
 \newpage
 Las sondas relativas a los ejercicios se guardan cuando el usuario accede a un ejercicio concreto. Como ocurre con las sesiones, cuando el usuario abandone el ejercicio se modificarán los datos de duración y fin del ejercicio. Se ha tenido en cuenta que al recargar un ejercicio se crea una nueva sonda no deseada. Dichas sondas se eliminan de la siguiente forma:\\
 \\
@@ -158,7 +158,7 @@ En el \textit{webserver} se evalúa el código enviado con el botón de evaluaci
 
 En este proceso de recogida de sondas y su grabación ha sido muy útil la utilización de la API que proporciona Elasticsearch para poder depurar y comprobar los datos que se estaban almacenando. Utilizando por ejemplo la URL    \newline       \texttt{http://127.0.0.1:9200/session\_log/\_search/?size=10000&pretty}, se comprueban las sondas de sesiones.\\
 \subsection{Despliegue}
-En este proyecto se ha utilizado la imagen de Docker de Elasticsearch debido a que permite que funcione en cualquier sistema operativo y replicar su instalación en cualquier máquina es directo. Primero hay que descargar la imagen de Elasticsearch con la versión deseada, en este caso se ha utilizado la 7.12.0. El comando para descargar la imagen es:
+En este proyecto se ha utilizado la imagen oficial de Docker de Elasticsearch debido a que permite que funcione en cualquier sistema operativo y replicar su instalación en cualquier máquina es directo. Primero hay que descargar la imagen de Elasticsearch con la versión deseada, en este caso se ha utilizado la 7.12.0. El comando para descargar la imagen es:
 {\footnotesize
 		\begin{verbatim}
 			docker pull docker.elastic.co/elasticsearch/elasticsearch:7.12.0
@@ -266,9 +266,9 @@ Dash utiliza el módulo Plotly para generar las visualizaciones. Plotly ofrece u
 \\
 En las siguientes subsecciones se detallan los resultados de las analíticas que se han programado para este TFG con datos de usuarios reales de la plataforma de Unibotics. Se muestran las diferentes gráficas creadas tanto para administradores como para los usuarios normales, así como una explicación de lo que representan.
 \subsection{Visualización del número de registros y usuarios de la plataforma}
-Los administradores tienen la opción de ver el número total de usuarios activos, que se definen como aquellos que han iniciado sesión en los últimos 2 meses. Además, se muestran las gráficas de línea de registros por cada día, registros acumulados por días (Figura \ref{fig:accumulated}) y usuarios activos (Figura \ref{fig:active}). Cada una de estas gráficas contiene su propio filtrado por fechas.\\
+Los administradores tienen la opción de ver el número total de usuarios activos, que se definen como aquellos que han iniciado sesión en los últimos 2 meses. Además, se muestran las gráficas de línea de registros por cada día (Figura \ref{fig:users}), registros acumulados por días (Figura \ref{fig:accumulated}) y usuarios activos (Figura \ref{fig:active}). Cada una de estas gráficas contiene su propio filtrado por fechas.\\
 
-Para la gráfica de usuarios activos, empezando por la primera sesión recogida en \texttt{session\_log} hasta el día actual, se comprueba cuántos usuarios han iniciado sesión desde 2 meses atrás hasta el día que se está comprobando. El código fuente para crear una gráfica de línea es el siguiente, en este caso del número de usuarios activos por día:
+Para la gráfica de usuarios activos, empezando por la primera sesión recogida en \\ \texttt{session\_log} hasta el día actual, se comprueba cuántos usuarios han iniciado sesión desde 2 meses atrás hasta el día que se está comprobando. El código fuente para crear una gráfica de línea es el siguiente, en este caso del número de usuarios activos por día:
 
 \begin{lstlisting}
 def get_temporal_figure_active_users(df):
@@ -284,7 +284,7 @@ return fig
 
 Las gráficas de las Figuras \ref{fig:users} y \ref{fig:accumulated} han sido elaboradas con la base de datos MySQL. Se ha realizado una lista de todas las fechas de los registros en Unibotics. Esta lista se ha convertido en \textit{dataframes}. Se ha contado el número de repeticiones de cada fecha y su acumulación, dando como resultado dichas gráficas.\\
 \newpage
-En marzo, la Figura \ref{fig:users} refleja el registro de los alumnos de "Visión en Robótica" en el Master de visión artificial URJC, curso 2020-2021. Y la subida de septiembre-octubre refleja el registro de los estudiantes de "Robótica móvil" y "Robótica de servicio" en el grado de Ingeniería Robótica Software, curso 2021-2022.
+En marzo de 2021, la Figura \ref{fig:users} refleja el registro de los alumnos de 'Visión en Robótica' en el Master de visión artificial URJC, curso 2020-2021. Y la subida de septiembre-octubre de 2021 refleja el registro de los estudiantes de 'Robótica móvil' y 'Robótica de servicio' en el grado de Ingeniería Robótica Software, curso 2021-2022.
 
 
 
@@ -306,12 +306,12 @@ En marzo, la Figura \ref{fig:users} refleja el registro de los alumnos de "Visi�
     \caption{Gráfica de evolución de usuarios activos cada día}
     \label{fig:active}
 \end{figure}
-En la Figura \ref{fig:active}) se muestra cómo en los meses de verano han disminuido los usuarios activos. Esto se debe a la finalización de los periodos lectivos de la universidad, donde se utiliza Unibotics.\\
+En la Figura \ref{fig:active} se muestra cómo en los meses de verano han disminuido los usuarios activos. Esto se debe a la finalización de los periodos lectivos de la universidad, donde se utiliza Unibotics.\\
 
 En todas las gráficas de Dash si se pone el cursor sobre uno de los puntos se puede ver la información con mayor detalle, como se muestra en la Figura \ref{fig:users}. Además, Dash añade varias opciones para interactuar con la gráfica, por ejemplo, se puede descargar la gráfica, hacer \textit{zoom} o seleccionar una parte de ella. \\
 \subsection{Visualización de actividad en la plataforma Unibotics}
 
-La gráfica creada que se muestra en la Figura \ref{fig:sesion} representa en el eje X el tiempo y en el eje Y el número de sesiones, dando como resultado una gráfica de línea, con énfasis en los puntos para una mejor visualización. Esta gráfica muestra el número de sesiones iniciales por día. En la gráfica se observa qué días ha habido más \textit{logins}, viéndose cómo en los meses de verano dicho número se ha reducido. Hace uso del índice \texttt{session\_log}, contando cuántas veces el campo \textit{start\_date} se repite.\\
+La gráfica creada que se muestra en la Figura \ref{fig:sesion} representa en el eje X el tiempo y en el eje Y el número de sesiones, dando como resultado una gráfica de línea, con énfasis en los puntos para una mejor visualización. Esta gráfica muestra el número de sesiones iniciadas por día. En la gráfica se observa qué días ha habido más \textit{logins}, viéndose cómo en los meses de verano dicho número se ha reducido. Hace uso del índice \texttt{session\_log}, contando cuántas veces el campo \textit{start\_date} se repite.\\
 
 
 
@@ -382,7 +382,7 @@ Con el propósito de conocer el tiempo que invierten los usuarios \textit{en cad
     \label{fig:histogram_exercise}
 \end{figure}
 
-La Figura \ref{fig:activity} representa un mapa de calor con la actividad de los usuarios. Estas gráficas están inspiradas en las que usa GitHub para mostrar la actividad de un desarrollador de software en sus repositorios. Está dividido en cuadrados que representan cada día de un año, cuanto más intenso es el color verde más sesiones ha habido. A medida que disminuyen las sesiones la intensidad también baja. Aparte del filtrado por fechas, tiene un filtro por usuario para ver la actividad por usuarios únicos o un grupo de ellos. Como ocurría con la gráfica lineal de sesiones, el primer mapa de color cuenta el total de las sesiones y el segundo mapa de color cuenta las sesiones únicas por usuario. Las sesiones se han contado a través del campo de \textit{start\_date} del índice de \texttt{session\_log}. En las gráficas se refleja como en los periodos lectivos hay una mayor actividad que en verano.\\
+La Figura \ref{fig:activity} representa un mapa de calor con la actividad de los usuarios. Estas gráficas están inspiradas en las que usa GitHub para mostrar la actividad de un desarrollador de software en sus repositorios. Está dividido en cuadrados que representan cada día de un año, cuanto más intenso es el color verde más sesiones ha habido. A medida que disminuyen las sesiones la intensidad también baja. Aparte del filtrado por fechas, tiene un filtro por usuario para ver la actividad por usuarios únicos o un grupo de ellos. Como ocurría con la gráfica lineal de sesiones, el primer mapa de color cuenta el total de las sesiones y el segundo mapa de color cuenta las sesiones únicas por usuario. Las sesiones se han contado a través del campo de \textit{start\_date} del índice de \texttt{session\_log}. En las gráficas se refleja cómo en los periodos lectivos hay una mayor actividad que en verano.\\
 
 
 
@@ -429,7 +429,7 @@ La Figura \ref{fig:browser} trata de una gráfica con los distintos navegadores 
 \end{figure}
 Se ha creado una gráfica similar a la anterior para representar los Sistemas Operativos utilizados por los usuarios que acceden a Unibotics, como se puede ver en la Figura \ref{fig:os}. Ambas gráficas tienen filtro por fechas.\\
 
-En ambas gráficas circulares se ha hecho uso del campo \textit{browser} del índice de \texttt{session\_log}, el cual da la información sobre el sistema operativo y el navegador utilizado. Para realizar dichas gráficas circulares se programa el siguiente código:
+En ambas gráficas circulares se ha hecho uso del campo \textit{browser} del índice de \newline \texttt{session\_log}, el cual da la información sobre el sistema operativo y el navegador utilizado. Para realizar dichas gráficas circulares se programa el siguiente código:
 \begin{lstlisting}
 def get_temporal_figure__browser(df):
     fig = px.pie(df, values='count', names='browser')
@@ -468,7 +468,7 @@ return fig
     \label{fig:score_efficacy}
 \end{figure}
 \subsection{Despliegue}
-Para desplegar Dash en producción se ha añadido su contenedor al \textit{docker compose} del sistema Unibotics. Se indica el puerto por el cual va a ser lanzado y las dependencias entre servicios, en este caso entre Dash y Elasticsearch. El código es el siguiente:\\
+Para desplegar Dash en producción se ha añadido su contenedor oficial al \textit{docker compose} del sistema Unibotics. Se indica el puerto por el cual va a ser lanzado y las dependencias entre servicios, en este caso entre Dash y Elasticsearch. El código es el siguiente:\\
 
 
 \begin{lstlisting}
